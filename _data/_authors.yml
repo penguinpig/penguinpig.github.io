@@ -1,0 +1,16 @@
+# /_data/authors.yml
+
+penguinpig:
+  name        : "飛天企鵝豬"
+  bio         : "S"
+  avatar      : "/assets/images/avatar-2.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:billyrick@rick.com"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: ""
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: ""

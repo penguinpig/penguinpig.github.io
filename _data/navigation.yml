@@ -1,3 +1,14 @@
+#Head navigate
 main:
-  - title: "Quick-Start Guide"
-    url: "/docs/quick-start-guid/"
+  - title: "學習紀錄"
+    url: "/study-archive/"
+  - title: "車車紀錄"
+    url: "/bikes-archive/"
+  - title: "騎士旅行團"
+    url: "/CKTG-archive"
+#Doc navigate
+docs:
+  - tile: Getting Start
+    children:
+      - title: 設定個人BLOG(GithubPage + jekyll)
+        url: /docs/studys/quickStart/

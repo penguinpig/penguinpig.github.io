@@ -16,5 +16,7 @@ TocOpen: true
 ## Basic command
 
 ```sh
-git config --list
+git config --list                           #Check config list
+git config --global user.name "{name}"      #Set name
+git config --global user.name "{email}"     #Set email
 ```

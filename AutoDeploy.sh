@@ -16,6 +16,9 @@ rm -r ./public
 #Change git branch to master
 git checkout master
 
+#Remove public folder on parent
+rm -r ../public
+
 #Copy public folder to current pwd
 cp -r ../public/* ./
 

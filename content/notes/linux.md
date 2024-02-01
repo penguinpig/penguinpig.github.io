@@ -12,8 +12,8 @@ TocOpen: true
 ---
 
 # Linux Command 筆記
-
-## Solution_1 (WSL)<r>Not used</r>
+ 
+## Solution_1 (WSL)<r style="color:red;">Not used</r>
 
 1. Window11 + WSL GUU
 

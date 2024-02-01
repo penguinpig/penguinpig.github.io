@@ -30,3 +30,6 @@ git commit -m "$msg"
 
 # Push Site to master
 git push origin master
+
+#Change git branch to dev
+git checkout dev

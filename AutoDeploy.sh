@@ -1,5 +1,7 @@
 #!/bin/bash
 
+msg="build stie_$(date '+%Y-%m-%d.%H%M')"
+
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
 #build site
@@ -16,6 +18,9 @@ git checkout master
 
 #Copy public folder to current pwd
 cp -r ../public/* ./
+
+#git Add everything
+git add .
 
 #commit to master
 git commit -m "$msg"

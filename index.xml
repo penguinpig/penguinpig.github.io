@@ -11,28 +11,49 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 01 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 02 Feb 2024 14:28:06 +0800</lastBuildDate>
     <atom:link href="https://penguinpig.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>2024-02-02</title>
+      <link>https://penguinpig.github.io/posts/2024-02-02/</link>
+      <pubDate>Fri, 02 Feb 2024 14:28:06 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-02-02/</guid>
+      <description>Daily Post</description>
+    </item>
+    <item>
+      <title>environment settings</title>
+      <link>https://penguinpig.github.io/notes/environment/</link>
+      <pubDate>Thu, 01 Feb 2024 15:45:39 +0800</pubDate>
+      <guid>https://penguinpig.github.io/notes/environment/</guid>
+      <description>environment settings.</description>
+    </item>
+    <item>
       <title>My Git Note</title>
-      <link>https://penguinpig.github.io/notes/gitnote/</link>
+      <link>https://penguinpig.github.io/notes/git/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://penguinpig.github.io/notes/gitnote/</guid>
+      <guid>https://penguinpig.github.io/notes/git/</guid>
       <description>Git Note.</description>
     </item>
     <item>
       <title>My Hugo Note</title>
-      <link>https://penguinpig.github.io/notes/hugonote/</link>
+      <link>https://penguinpig.github.io/notes/hugo/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://penguinpig.github.io/notes/hugonote/</guid>
+      <guid>https://penguinpig.github.io/notes/hugo/</guid>
       <description>My Hugo Note.</description>
     </item>
     <item>
       <title>My Linux Note</title>
-      <link>https://penguinpig.github.io/notes/linuxnote/</link>
+      <link>https://penguinpig.github.io/notes/linux/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://penguinpig.github.io/notes/linuxnote/</guid>
+      <guid>https://penguinpig.github.io/notes/linux/</guid>
       <description>Linux Note.</description>
+    </item>
+    <item>
+      <title>2024-01-31</title>
+      <link>https://penguinpig.github.io/posts/2024-01-31/</link>
+      <pubDate>Wed, 31 Jan 2024 14:28:06 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-01-31/</guid>
+      <description>Daily Post</description>
     </item>
   </channel>
 </rss>

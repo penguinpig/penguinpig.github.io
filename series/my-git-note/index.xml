@@ -15,9 +15,9 @@
     <atom:link href="https://penguinpig.github.io/series/my-git-note/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Git Note</title>
-      <link>https://penguinpig.github.io/notes/gitnote/</link>
+      <link>https://penguinpig.github.io/notes/git/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://penguinpig.github.io/notes/gitnote/</guid>
+      <guid>https://penguinpig.github.io/notes/git/</guid>
       <description>Git Note.</description>
     </item>
   </channel>

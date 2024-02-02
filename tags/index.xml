@@ -11,8 +11,29 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 01 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 02 Feb 2024 14:28:06 +0800</lastBuildDate>
     <atom:link href="https://penguinpig.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>daily</title>
+      <link>https://penguinpig.github.io/tags/daily/</link>
+      <pubDate>Fri, 02 Feb 2024 14:28:06 +0800</pubDate>
+      <guid>https://penguinpig.github.io/tags/daily/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>notes</title>
+      <link>https://penguinpig.github.io/tags/notes/</link>
+      <pubDate>Thu, 01 Feb 2024 15:45:39 +0800</pubDate>
+      <guid>https://penguinpig.github.io/tags/notes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>setting</title>
+      <link>https://penguinpig.github.io/tags/setting/</link>
+      <pubDate>Thu, 01 Feb 2024 15:45:39 +0800</pubDate>
+      <guid>https://penguinpig.github.io/tags/setting/</guid>
+      <description></description>
+    </item>
     <item>
       <title>code</title>
       <link>https://penguinpig.github.io/tags/code/</link>
@@ -21,24 +42,38 @@
       <description></description>
     </item>
     <item>
-      <title>gist</title>
-      <link>https://penguinpig.github.io/tags/gist/</link>
+      <title>coomand</title>
+      <link>https://penguinpig.github.io/tags/coomand/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://penguinpig.github.io/tags/gist/</guid>
+      <guid>https://penguinpig.github.io/tags/coomand/</guid>
       <description></description>
     </item>
     <item>
-      <title>markdown</title>
-      <link>https://penguinpig.github.io/tags/markdown/</link>
+      <title>hugo</title>
+      <link>https://penguinpig.github.io/tags/hugo/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://penguinpig.github.io/tags/markdown/</guid>
+      <guid>https://penguinpig.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     <item>
-      <title>syntax</title>
-      <link>https://penguinpig.github.io/tags/syntax/</link>
+      <title>linux</title>
+      <link>https://penguinpig.github.io/tags/linux/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://penguinpig.github.io/tags/syntax/</guid>
+      <guid>https://penguinpig.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>shell</title>
+      <link>https://penguinpig.github.io/tags/shell/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://penguinpig.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>script</title>
+      <link>https://penguinpig.github.io/tags/script/</link>
+      <pubDate>Wed, 31 Jan 2024 14:28:06 +0800</pubDate>
+      <guid>https://penguinpig.github.io/tags/script/</guid>
       <description></description>
     </item>
   </channel>

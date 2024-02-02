@@ -10,17 +10,17 @@ hugo
 #Copy public folder to parent
 cp -r ./public ..
 
-#Remove public folder
+#Remove public folder current pwd
 rm -r ./public
 
 #Change git branch to master
 git checkout master
 
-#Remove public folder on parent
-rm -r ../public
-
 #Copy public folder to current pwd
 cp -r ../public/* ./
+
+#Remove public folder on parent
+rm -r ../public
 
 #git Add everything
 git add .

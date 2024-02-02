@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 02 Feb 2024 14:28:06 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 02 Feb 2024 16:57:51 +0800</lastBuildDate>
     <atom:link href="https://penguinpig.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bikes</title>
+      <link>https://penguinpig.github.io/tags/bikes/</link>
+      <pubDate>Fri, 02 Feb 2024 16:57:51 +0800</pubDate>
+      <guid>https://penguinpig.github.io/tags/bikes/</guid>
+      <description></description>
+    </item>
     <item>
       <title>daily</title>
       <link>https://penguinpig.github.io/tags/daily/</link>
@@ -67,6 +74,13 @@
       <link>https://penguinpig.github.io/tags/shell/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
       <guid>https://penguinpig.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>powershell</title>
+      <link>https://penguinpig.github.io/tags/powershell/</link>
+      <pubDate>Wed, 31 Jan 2024 14:28:06 +0800</pubDate>
+      <guid>https://penguinpig.github.io/tags/powershell/</guid>
       <description></description>
     </item>
     <item>

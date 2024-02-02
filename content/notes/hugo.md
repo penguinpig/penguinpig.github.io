@@ -13,3 +13,7 @@ TocOpen: true
 
 ## Basic command
 
+```sh
+hugo new content -k {archetypes} {filename}.md  # Create a article and specefic the file type
+hugo new content {filename}.md -c {path}        # Create a file and specific file path
+```

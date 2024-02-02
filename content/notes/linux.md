@@ -4,8 +4,8 @@ title: "My Linux Note"
 date: "2024-02-01"
 description: "Linux Note."
 summary: "Linux Note."
-tags: ["markdown", "syntax", "code", "gist"]
-categories: ["themes", "syntax"]
+tags: ["notes", "shell", "code"]
+categories: ["linux", "syntax"]
 series: ["My Linux Note"]
 ShowToc: true
 TocOpen: true

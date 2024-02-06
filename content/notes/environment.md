@@ -193,7 +193,7 @@ TocOpen: true
                 Set-VM -VMName "VMName" -EnhancedSessionTransportType HvSocket
             ```
      7. ssh connection timeout settings(optional)
-        1. vim /etc/ssh/ssh_config
+        1. vim /etc/ssh/sshd_config (server config)
         2. 加入以下
           ```ini
             ClientAliveInterval 30 #伺服器每隔(秒) 傳送訊息給客戶端，客戶端收到訊息會回傳以維持連線。

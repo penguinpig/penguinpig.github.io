@@ -49,3 +49,16 @@ ss                   #netstat
 
 1. nc(netcat)
 
+2. ufw(Uncomlicated Firewall)
+   - basic command
+    ```sh
+        sudo ufw {enable/disable} #{啟用/關閉} 防火牆
+        sudo ufw status numbered #查看目前設定的規則
+        sudo ufw default allow #預設允許所有通訊埠
+        sudo ufw default deny #預設允許封鎖通訊埠
+        sudo ufw {allow/deny} number_port #{允許/封鎖}特定通訊埠
+        sudo ufw {allow/deny} port_num:port_num/{tcp/udp} ##{允許/封鎖}特定通訊埠一個區間
+        sudo ufw {allow/deny} from {ipAddress} #{允許/封鎖} {ipAddress} 的所有連線
+        sudo ufw {allow/deny} from {ipAddress}/{ipAddress_lastpart} #{允許/封鎖} 一個區間的IP 的所有連線
+    ```
+

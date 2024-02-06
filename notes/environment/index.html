@@ -100,8 +100,8 @@
   "keywords": [
     "notes", "setting"
   ],
-  "articleBody": "環境設定 Solution_1 (WSL)\nWindow11 + WSL GUU\n確認安裝 WSL2 安裝版本(distribution):Ubuntu-20.04 Linux 安裝以下套件\nsudo apt-get install xrdp sudo apt-get install vnc4server sudo apt-get install ubuntu-desktop (optional) wsl basic command\nwsl --list --verbose #List all installed distribution verison wsl --shutdown 疑難排解\n如果無法安裝套件執行以下動作(X)\ncd /etc sudo touch wsl.conf sudo vim wsl.conf [network] generateResolvConf = false Reboot wsl wsl --shutdown wsl Edit resolv.conf cd /etc sudo touch resolv.conf sudo vim resolv.conf nameserver 8.8.8.8 Hyper-V\nHyper-V + Ubuntu LTS (22.04) 準備 ISO 檔(ubuntu-22.04.3) HyperV 預先建立硬碟256G(避免之後要再擴展) 網卡選擇Default switch 成功安裝Linux後，執行以下命令 apt-get install openssh-server #安裝 Secure Shell Server systemctl status ssh #檢查狀態 ip addr | grep eth0 #檢查IP位置 本機電腦上，執行以下命令遠端到電腦 ssh {userName}@{IP} ",
-  "wordCount" : "103",
+  "articleBody": "環境設定 Solution_1 (WSL)\nWindow11 + WSL GUU\n確認安裝 WSL2 安裝版本(distribution):Ubuntu-20.04 Linux 安裝以下套件\nsudo apt-get install xrdp sudo apt-get install vnc4server sudo apt-get install ubuntu-desktop (optional) wsl basic command\nwsl --list --verbose #List all installed distribution verison wsl --shutdown 疑難排解\n如果無法安裝套件執行以下動作(X)\ncd /etc sudo touch wsl.conf sudo vim wsl.conf [network] generateResolvConf = false Reboot wsl wsl --shutdown wsl Edit resolv.conf cd /etc sudo touch resolv.conf sudo vim resolv.conf nameserver 8.8.8.8 Hyper-V\nHyper-V + Ubuntu LTS (22.04) 準備 ISO 檔(ubuntu-22.04.3) HyperV 預先建立硬碟256G(避免之後要再擴展) 網卡選擇Default switch 成功安裝Linux後，執行以下命令 apt-get install openssh-server #安裝 Secure Shell Server systemctl status ssh #檢查狀態 ip addr | grep eth0 #檢查IP位置 本機電腦上，執行以下命令遠端到電腦 ssh {userName}@{IP} 開啟加強工作階段(optional) 執行以下指令後重啟電腦，再執行一次 #!/bin/bash # # This script is for Ubuntu 18.04 Bionic Beaver to download and install XRDP+XORGXRDP via # source. # # Major thanks to: http://c-nergy.be/blog/?p=11336 for the tips. # ############################################################################### # Use HWE kernel packages # HWE=\"\" #HWE=\"-hwe-18.04\" ############################################################################### # Update our machine to the latest code if we need to. # if [ \"$(id -u)\" -ne 0 ]; then echo 'This script must be run with root privileges' \u003e\u00262 exit 1 fi apt update \u0026\u0026 apt upgrade -y if [ -f /var/run/reboot-required ]; then echo \"A reboot is required in order to proceed with the install.\" \u003e\u00262 echo \"Please reboot and re-run this script to finish the install.\" \u003e\u00262 exit 1 fi ############################################################################### # XRDP # # Install hv_kvp utils apt install -y linux-tools-virtual${HWE} apt install -y linux-cloud-tools-virtual${HWE} # Install the xrdp service so we have the auto start behavior apt install -y xrdp systemctl stop xrdp systemctl stop xrdp-sesman # Configure the installed XRDP ini files. # use vsock transport. sed -i_orig -e 's/use_vsock=false/use_vsock=true/g' /etc/xrdp/xrdp.ini # use rdp security. sed -i_orig -e 's/security_layer=negotiate/security_layer=rdp/g' /etc/xrdp/xrdp.ini # remove encryption validation. sed -i_orig -e 's/crypt_level=high/crypt_level=none/g' /etc/xrdp/xrdp.ini # disable bitmap compression since its local its much faster sed -i_orig -e 's/bitmap_compression=true/bitmap_compression=false/g' /etc/xrdp/xrdp.ini # Add script to setup the ubuntu session properly if [ ! -e /etc/xrdp/startubuntu.sh ]; then cat \u003e\u003e /etc/xrdp/startubuntu.sh \u003c\u003c EOF #!/bin/sh export GNOME_SHELL_SESSION_MODE=ubuntu export XDG_CURRENT_DESKTOP=ubuntu:GNOME exec /etc/xrdp/startwm.sh EOF chmod a+x /etc/xrdp/startubuntu.sh fi # use the script to setup the ubuntu session sed -i_orig -e 's/startwm/startubuntu/g' /etc/xrdp/sesman.ini # rename the redirected drives to 'shared-drives' sed -i -e 's/FuseMountName=thinclient_drives/FuseMountName=shared-drives/g' /etc/xrdp/sesman.ini # Changed the allowed_users sed -i_orig -e 's/allowed_users=console/allowed_users=anybody/g' /etc/X11/Xwrapper.config # Blacklist the vmw module if [ ! -e /etc/modprobe.d/blacklist_vmw_vsock_vmci_transport.conf ]; then cat \u003e\u003e /etc/modprobe.d/blacklist_vmw_vsock_vmci_transport.conf \u003c",
+  "wordCount" : "486",
   "inLanguage": "en",
   "datePublished": "2024-02-01T15:45:39+08:00",
   "dateModified": "2024-02-01T15:45:39+08:00",
@@ -204,7 +204,7 @@
     <div class="post-description">
       environment settings.
     </div>
-    <div class="post-meta"><span title='2024-02-01 15:45:39 +0800 CST'>February 1, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;PenguinPig
+    <div class="post-meta"><span title='2024-02-01 15:45:39 +0800 CST'>February 1, 2024</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;PenguinPig
 
 </div>
   </header> <div class="toc">
@@ -292,8 +292,136 @@
 <li>本機電腦上，執行以下命令遠端到電腦
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">  ssh <span class="o">{</span>userName<span class="o">}</span>@<span class="o">{</span>IP<span class="o">}</span>
 </span></span></code></pre></div></li>
+<li>開啟加強工作階段(optional)
+<ol>
+<li>執行以下指令後重啟電腦，再執行一次</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">    <span class="c1">#!/bin/bash</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># This script is for Ubuntu 18.04 Bionic Beaver to download and install XRDP+XORGXRDP via</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># source.</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Major thanks to: http://c-nergy.be/blog/?p=11336 for the tips.</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">###############################################################################</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Use HWE kernel packages</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">HWE</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#HWE=&#34;-hwe-18.04&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">###############################################################################</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Update our machine to the latest code if we need to.</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="k">$(</span>id -u<span class="k">)</span><span class="s2">&#34;</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">echo</span> <span class="s1">&#39;This script must be run with root privileges&#39;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    apt update <span class="o">&amp;&amp;</span> apt upgrade -y
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> -f /var/run/reboot-required <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">echo</span> <span class="s2">&#34;A reboot is required in order to proceed with the install.&#34;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">echo</span> <span class="s2">&#34;Please reboot and re-run this script to finish the install.&#34;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">###############################################################################</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># XRDP</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Install hv_kvp utils</span>
+</span></span><span class="line"><span class="cl">    apt install -y linux-tools-virtual<span class="si">${</span><span class="nv">HWE</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl">    apt install -y linux-cloud-tools-virtual<span class="si">${</span><span class="nv">HWE</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Install the xrdp service so we have the auto start behavior</span>
+</span></span><span class="line"><span class="cl">    apt install -y xrdp
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    systemctl stop xrdp
+</span></span><span class="line"><span class="cl">    systemctl stop xrdp-sesman
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Configure the installed XRDP ini files.</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># use vsock transport.</span>
+</span></span><span class="line"><span class="cl">    sed -i_orig -e <span class="s1">&#39;s/use_vsock=false/use_vsock=true/g&#39;</span> /etc/xrdp/xrdp.ini
+</span></span><span class="line"><span class="cl">    <span class="c1"># use rdp security.</span>
+</span></span><span class="line"><span class="cl">    sed -i_orig -e <span class="s1">&#39;s/security_layer=negotiate/security_layer=rdp/g&#39;</span> /etc/xrdp/xrdp.ini
+</span></span><span class="line"><span class="cl">    <span class="c1"># remove encryption validation.</span>
+</span></span><span class="line"><span class="cl">    sed -i_orig -e <span class="s1">&#39;s/crypt_level=high/crypt_level=none/g&#39;</span> /etc/xrdp/xrdp.ini
+</span></span><span class="line"><span class="cl">    <span class="c1"># disable bitmap compression since its local its much faster</span>
+</span></span><span class="line"><span class="cl">    sed -i_orig -e <span class="s1">&#39;s/bitmap_compression=true/bitmap_compression=false/g&#39;</span> /etc/xrdp/xrdp.ini
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Add script to setup the ubuntu session properly</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> ! -e /etc/xrdp/startubuntu.sh <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    cat &gt;&gt; /etc/xrdp/startubuntu.sh <span class="s">&lt;&lt; EOF
+</span></span></span><span class="line"><span class="cl"><span class="s">    #!/bin/sh
+</span></span></span><span class="line"><span class="cl"><span class="s">    export GNOME_SHELL_SESSION_MODE=ubuntu
+</span></span></span><span class="line"><span class="cl"><span class="s">    export XDG_CURRENT_DESKTOP=ubuntu:GNOME
+</span></span></span><span class="line"><span class="cl"><span class="s">    exec /etc/xrdp/startwm.sh
+</span></span></span><span class="line"><span class="cl"><span class="s">    EOF</span>
+</span></span><span class="line"><span class="cl">    chmod a+x /etc/xrdp/startubuntu.sh
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># use the script to setup the ubuntu session</span>
+</span></span><span class="line"><span class="cl">    sed -i_orig -e <span class="s1">&#39;s/startwm/startubuntu/g&#39;</span> /etc/xrdp/sesman.ini
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># rename the redirected drives to &#39;shared-drives&#39;</span>
+</span></span><span class="line"><span class="cl">    sed -i -e <span class="s1">&#39;s/FuseMountName=thinclient_drives/FuseMountName=shared-drives/g&#39;</span> /etc/xrdp/sesman.ini
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Changed the allowed_users</span>
+</span></span><span class="line"><span class="cl">    sed -i_orig -e <span class="s1">&#39;s/allowed_users=console/allowed_users=anybody/g&#39;</span> /etc/X11/Xwrapper.config
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Blacklist the vmw module</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> ! -e /etc/modprobe.d/blacklist_vmw_vsock_vmci_transport.conf <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    cat &gt;&gt; /etc/modprobe.d/blacklist_vmw_vsock_vmci_transport.conf <span class="s">&lt;&lt;EOF
+</span></span></span><span class="line"><span class="cl"><span class="s">    blacklist vmw_vsock_vmci_transport
+</span></span></span><span class="line"><span class="cl"><span class="s">    EOF</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">#Ensure hv_sock gets loaded</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> ! -e /etc/modules-load.d/hv_sock.conf <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;hv_sock&#34;</span> &gt; /etc/modules-load.d/hv_sock.conf
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Configure the policy xrdp session</span>
+</span></span><span class="line"><span class="cl">    cat &gt; /etc/polkit-1/localauthority/50-local.d/45-allow-colord.pkla <span class="s">&lt;&lt;EOF
+</span></span></span><span class="line"><span class="cl"><span class="s">    [Allow Colord all Users]
+</span></span></span><span class="line"><span class="cl"><span class="s">    Identity=unix-user:*
+</span></span></span><span class="line"><span class="cl"><span class="s">    Action=org.freedesktop.color-manager.create-device;org.freedesktop.color-manager.create-profile;org.freedesktop.color-manager.delete-device;org.freedesktop.color-manager.delete-profile;org.freedesktop.color-manager.modify-device;org.freedesktop.color-manager.modify-profile
+</span></span></span><span class="line"><span class="cl"><span class="s">    ResultAny=no
+</span></span></span><span class="line"><span class="cl"><span class="s">    ResultInactive=no
+</span></span></span><span class="line"><span class="cl"><span class="s">    ResultActive=yes
+</span></span></span><span class="line"><span class="cl"><span class="s">    EOF</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># reconfigure the service</span>
+</span></span><span class="line"><span class="cl">    systemctl daemon-reload
+</span></span><span class="line"><span class="cl">    systemctl start xrdp
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># End XRDP</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">###############################################################################</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Install is complete.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Reboot your machine to begin using XRDP.&#34;</span>
+</span></span></code></pre></div></li>
+<li>打開PowerShell 執行
+<code>powershell Set-VM -VMName &quot;VMName&quot; -EnhancedSessionTransportType HvSocket </code></li>
 </ol>
 </li>
+<li>ssh connection timeout settings(optional)
+<ol>
+<li>vim /etc/ssh/sshd_config (server config)</li>
+<li>加入以下</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl">  <span class="na">ClientAliveInterval 30 #伺服器每隔(秒) 傳送訊息給客戶端，客戶端收到訊息會回傳以維持連線。</span>
+</span></span><span class="line"><span class="cl">  <span class="na">ClientAliveCountMax 20 #經過幾次客戶端沒回應，伺服器結束連線</span>
+</span></span></code></pre></div><ol start="3">
+<li>重啟服務</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">  systemctl restart ssh
+</span></span><span class="line"><span class="cl">  systemctl restart sshd
+</span></span></code></pre></div></li>
 </ol>
 </li>
 </ul>

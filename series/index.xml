@@ -41,5 +41,12 @@
       <guid>https://penguinpig.github.io/series/my-linux-note/</guid>
       <description></description>
     </item>
+    <item>
+      <title>My MicroService Note</title>
+      <link>https://penguinpig.github.io/series/my-microservice-note/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://penguinpig.github.io/series/my-microservice-note/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

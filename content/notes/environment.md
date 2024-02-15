@@ -65,7 +65,9 @@ TocOpen: true
     1. Hyper-V + Ubuntu LTS **(22.04)**
        1. [準備 ISO 檔(ubuntu-22.04.3)](https://ubuntu.com/download/desktop)
        2. HyperV 預先建立硬碟256G(避免之後要再擴展)
-       3. 網卡選擇Default switch
+       3. 網卡建立並選擇Internal switch
+          1. 在網路公用中心找到連至外部網路的網卡，右鍵內容至共用選單
+          2. 打勾畫面裡的兩個選項，下拉選單選擇剛剛建立的內部網路交換器
        4. 成功安裝Linux後，執行以下命令
           ```sh
             apt-get install openssh-server #安裝 Secure Shell Server
@@ -188,11 +190,11 @@ TocOpen: true
                 echo "Install is complete."
                 echo "Reboot your machine to begin using XRDP."
             ```
-          2. 打開PowerShell 執行
+          1. 打開PowerShell 執行
             ```powershell
                 Set-VM -VMName "VMName" -EnhancedSessionTransportType HvSocket
             ```
-     7. ssh connection timeout settings(optional)
+     2. ssh connection timeout settings(optional)
         1. vim /etc/ssh/sshd_config (server config)
         2. 加入以下
           ```ini

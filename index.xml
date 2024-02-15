@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PenguinPig Site</title>
+    <link>https://penguinpig.github.io/</link>
+    <description>Recent content on PenguinPig Site</description>
+    <image>
+      <title>PenguinPig Site</title>
+      <url>https://penguinpig.github.io/images/papermod-cover.png</url>
+      <link>https://penguinpig.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 02 Feb 2024 16:57:51 +0800</lastBuildDate>
+    <atom:link href="https://penguinpig.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mybike</title>
+      <link>https://penguinpig.github.io/bikes/mybike/</link>
+      <pubDate>Fri, 02 Feb 2024 16:57:51 +0800</pubDate>
+      <guid>https://penguinpig.github.io/bikes/mybike/</guid>
+      <description>Cygnus-x 4th(2016) history list time money items 2024-01-01 NT 100 碗公 CBR 500R 4th(2022) </description>
+    </item>
+    <item>
+      <title>2024-02-02</title>
+      <link>https://penguinpig.github.io/posts/2024-02-02/</link>
+      <pubDate>Fri, 02 Feb 2024 14:28:06 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-02-02/</guid>
+      <description>Daily Post</description>
+    </item>
+    <item>
+      <title>environment settings</title>
+      <link>https://penguinpig.github.io/notes/environment/</link>
+      <pubDate>Thu, 01 Feb 2024 15:45:39 +0800</pubDate>
+      <guid>https://penguinpig.github.io/notes/environment/</guid>
+      <description>environment settings.</description>
+    </item>
+    <item>
+      <title>My Git Note</title>
+      <link>https://penguinpig.github.io/notes/git/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://penguinpig.github.io/notes/git/</guid>
+      <description>Git Note.</description>
+    </item>
+    <item>
+      <title>My Hugo Note</title>
+      <link>https://penguinpig.github.io/notes/hugo/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://penguinpig.github.io/notes/hugo/</guid>
+      <description>My Hugo Note.</description>
+    </item>
+    <item>
+      <title>My Linux Note</title>
+      <link>https://penguinpig.github.io/notes/linux/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://penguinpig.github.io/notes/linux/</guid>
+      <description>Linux Note.</description>
+    </item>
+    <item>
+      <title>My MicroService Note</title>
+      <link>https://penguinpig.github.io/notes/microservice/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://penguinpig.github.io/notes/microservice/</guid>
+      <description>MicroService Note.</description>
+    </item>
+    <item>
+      <title>2024-01-31</title>
+      <link>https://penguinpig.github.io/posts/2024-01-31/</link>
+      <pubDate>Wed, 31 Jan 2024 14:28:06 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-01-31/</guid>
+      <description>Daily Post</description>
+    </item>
+    <item>
+      <title>Bikes</title>
+      <link>https://penguinpig.github.io/bikes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penguinpig.github.io/bikes/</guid>
+      <description>archives</description>
+    </item>
+    <item>
+      <title>Notes</title>
+      <link>https://penguinpig.github.io/notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penguinpig.github.io/notes/</guid>
+      <description>archives</description>
+    </item>
+  </channel>
+</rss>

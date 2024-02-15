@@ -40,11 +40,19 @@ ufw allow 5001       #Change firewall rule
 watch -n 0.5 {script}         #Watch terminal,Repeat script in 0.5s
 compgen -c           #List all available command you can run
 ss                   #netstat
+ps -aux {name}       #Print all process
+readlink -f /proc/{pid}/exe #Get process execing path
 ```
 
 ---
 ## Others
 
+### ssh settings
+
+1. basic
+   1. ssh.config，client side setting when you connect to other server used
+   2. sshd.config，server side setting when other user connect to the host used
+`
 ### firewall settings
 
 1. nc(netcat)
@@ -61,4 +69,10 @@ ss                   #netstat
         sudo ufw {allow/deny} from {ipAddress} #{允許/封鎖} {ipAddress} 的所有連線
         sudo ufw {allow/deny} from {ipAddress}/{ipAddress_lastpart} #{允許/封鎖} 一個區間的IP 的所有連線
     ```
-
+3. iptables
+   - basic command
+    ```sh
+        firewall-cmd --zone=public --add-port=8080/tcp #Add Incoming port rule
+        firewall-cmd --reload                          #Update change of firewall rule
+        firewall-cmd --zone=public --list-ports        #list zone port rlue
+    ```

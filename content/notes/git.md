@@ -42,3 +42,15 @@ git config --list                           #Check config list
 git config --global user.name "{name}"      #Set name
 git config --global user.name "{email}"     #Set email
 ```
+
+## Common problem
+
+- Can not clone push pull,beacuse prot 22 timeout
+  - cd to /etc/ssh
+  - sudo vim ssh_config，add the followings
+  ```text
+   Host github.com
+      Hostname ssh.github.com
+      Port 443
+  ``` 
+  - ssh -T git@github.com，test command

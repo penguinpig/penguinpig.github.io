@@ -100,8 +100,8 @@
   "keywords": [
     "notes", "linux"
   ],
-  "articleBody": "Git 筆記 Setting ssh Generate ssh key(pulbic \u0026 private) ssh-keygen -t rsa -b 4096 -C \"{email}\" Press three times enter to use default value Check Result ls ~/.ssh -al cat ~/.ssh id_rsa cat ~/.ssh id_rsa.pub Copy public key cat ~/.ssh/id_rsa.pub Apply to GitHub setting Settings \u003e SSH and GPG keys New SSH key Type a name，Add a ssh key Basic command git config --list #Check config list git config --global user.name \"{name}\" #Set name git config --global user.name \"{email}\" #Set email ",
-  "wordCount" : "81",
+  "articleBody": "Git 筆記 Setting ssh Generate ssh key(pulbic \u0026 private) ssh-keygen -t rsa -b 4096 -C \"{email}\" Press three times enter to use default value Check Result ls ~/.ssh -al cat ~/.ssh id_rsa cat ~/.ssh id_rsa.pub Copy public key cat ~/.ssh/id_rsa.pub Apply to GitHub setting Settings \u003e SSH and GPG keys New SSH key Type a name，Add a ssh key Basic command git config --list #Check config list git config --global user.name \"{name}\" #Set name git config --global user.name \"{email}\" #Set email Common problem Can not clone push pull,beacuse prot 22 timeout cd to /etc/ssh sudo vim ssh_config，add the followings Host github.com Hostname ssh.github.com Port 443 ssh -T git@github.com，test command ",
+  "wordCount" : "109",
   "inLanguage": "en",
   "datePublished": "2024-02-01T00:00:00Z",
   "dateModified": "2024-02-01T00:00:00Z",
@@ -220,7 +220,9 @@
                 <li>
                     <a href="#setting-ssh" aria-label="Setting ssh">Setting ssh</a></li>
                 <li>
-                    <a href="#basic-command" aria-label="Basic command">Basic command</a>
+                    <a href="#basic-command" aria-label="Basic command">Basic command</a></li>
+                <li>
+                    <a href="#common-problem" aria-label="Common problem">Common problem</a>
                 </li>
             </ul>
             </li>
@@ -264,7 +266,22 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git config --list                           <span class="c1">#Check config list</span>
 </span></span><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;{name}&#34;</span>      <span class="c1">#Set name</span>
 </span></span><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;{email}&#34;</span>     <span class="c1">#Set email</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><h2 id="common-problem">Common problem<a hidden class="anchor" aria-hidden="true" href="#common-problem">#</a></h2>
+<ul>
+<li>Can not clone push pull,beacuse prot 22 timeout
+<ul>
+<li>cd to /etc/ssh</li>
+<li>sudo vim ssh_config，add the followings</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl"> Host github.com
+</span></span><span class="line"><span class="cl">    Hostname ssh.github.com
+</span></span><span class="line"><span class="cl">    Port 443
+</span></span></code></pre></div><ul>
+<li>ssh -T <a href="mailto:git@github.com">git@github.com</a>，test command</li>
+</ul>
+</li>
+</ul>
+
 
   </div>
 

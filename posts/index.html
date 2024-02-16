@@ -169,14 +169,14 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">2024 02 16
+    <h2 class="entry-hint-parent">2024-02-16
     </h2>
   </header>
   <div class="entry-content">
     <p>過濾數字以外的輸入 測試以下貼上的行為 Ctrl &#43; V 會觸發KeyDown/Input/KeyUp Event，Focus在輸入框時在鍵盤上的任何輸入都會被監聽到 Right Click &#43; Paste 只會觸發Input Event Sample Code &lt;html&gt; &lt;head&gt; &lt;script src=&#34;https://code.jquery.com/jquery-3.7.1.min.js&#34; integrity=&#34;sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=&#34; crossorigin=&#34;anonymous&#34; &gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;form&gt; &lt;div&gt; &lt;span&gt;測試字串:123456 飛天豬&lt;/span&gt; &lt;/div&gt; &lt;div&gt; &lt;label&gt;測試貼上行為(右鍵貼上不會被過濾)&lt;/label&gt; &lt;input id=&#34;test1&#34; value=&#34;&#34; maxlength=&#34;16&#34; onkeyup=&#34;value=value.replace(/[^0-9]/g,&#39;&#39;)&#34; /&gt; &lt;/div&gt; &lt;div&gt; &lt;label&gt;測試貼上行為(右鍵貼上不會被過濾)&lt;/label&gt; &lt;input id=&#34;output&#34; value=&#34;&#34; maxlength=&#34;16&#34; oninput=&#34;value=value.replace(/[^0-9]/g,&#39;&#39;)&#34; /&gt; &lt;/div&gt; &lt;/form&gt; &lt;/body&gt; &lt;script&gt; $(&#34;#test1&#34;).on(&#34;keydown&#34;, function (e) { console.log(&#34;1-keydown&#34;, this.value); }); $(&#34;#test1&#34;).on(&#34;keyup&#34;, function (e) { console.log(&#34;3-keyup&#34;, this.value); }); $(&#34;#test1&#34;).on(&#34;input&#34;, function (e) { console.log(&#34;2-input&#34;, this.value); }); &lt;/script&gt; &lt;/html&gt; </p>
   </div>
   <footer class="entry-footer"><span title='2024-02-16 10:46:51 +0800 CST'>February 16, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;PenguinPig</footer>
-  <a class="entry-link" aria-label="post link to 2024 02 16" href="https://penguinpig.github.io/posts/2024-02-16/"></a>
+  <a class="entry-link" aria-label="post link to 2024-02-16" href="https://penguinpig.github.io/posts/2024-02-16/"></a>
 </article>
 
 <article class="post-entry"> 

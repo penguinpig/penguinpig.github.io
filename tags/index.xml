@@ -11,8 +11,22 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 02 Feb 2024 16:57:51 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 16 Feb 2024 10:46:51 +0800</lastBuildDate>
     <atom:link href="https://penguinpig.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>html</title>
+      <link>https://penguinpig.github.io/tags/html/</link>
+      <pubDate>Fri, 16 Feb 2024 10:46:51 +0800</pubDate>
+      <guid>https://penguinpig.github.io/tags/html/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>javascript</title>
+      <link>https://penguinpig.github.io/tags/javascript/</link>
+      <pubDate>Fri, 16 Feb 2024 10:46:51 +0800</pubDate>
+      <guid>https://penguinpig.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
     <item>
       <title>bikes</title>
       <link>https://penguinpig.github.io/tags/bikes/</link>

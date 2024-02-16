@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://penguinpig.github.io/posts/2024-02-16/</loc>
+    <lastmod>2024-02-16T10:46:51+08:00</lastmod>
+  </url><url>
+    <loc>https://penguinpig.github.io/categories/</loc>
+    <lastmod>2024-02-16T10:46:51+08:00</lastmod>
+  </url><url>
+    <loc>https://penguinpig.github.io/categories/daily/</loc>
+    <lastmod>2024-02-16T10:46:51+08:00</lastmod>
+  </url><url>
+    <loc>https://penguinpig.github.io/tags/html/</loc>
+    <lastmod>2024-02-16T10:46:51+08:00</lastmod>
+  </url><url>
+    <loc>https://penguinpig.github.io/tags/javascript/</loc>
+    <lastmod>2024-02-16T10:46:51+08:00</lastmod>
+  </url><url>
+    <loc>https://penguinpig.github.io/</loc>
+    <lastmod>2024-02-16T10:46:51+08:00</lastmod>
+  </url><url>
+    <loc>https://penguinpig.github.io/posts/</loc>
+    <lastmod>2024-02-16T10:46:51+08:00</lastmod>
+  </url><url>
+    <loc>https://penguinpig.github.io/tags/</loc>
+    <lastmod>2024-02-16T10:46:51+08:00</lastmod>
+  </url><url>
     <loc>https://penguinpig.github.io/tags/bikes/</loc>
     <lastmod>2024-02-02T16:57:51+08:00</lastmod>
   </url><url>
@@ -11,25 +35,10 @@
     <loc>https://penguinpig.github.io/bikes/mybike/</loc>
     <lastmod>2024-02-02T16:57:51+08:00</lastmod>
   </url><url>
-    <loc>https://penguinpig.github.io/</loc>
-    <lastmod>2024-02-02T16:57:51+08:00</lastmod>
-  </url><url>
-    <loc>https://penguinpig.github.io/tags/</loc>
-    <lastmod>2024-02-02T16:57:51+08:00</lastmod>
-  </url><url>
     <loc>https://penguinpig.github.io/posts/2024-02-02/</loc>
     <lastmod>2024-02-02T14:28:06+08:00</lastmod>
   </url><url>
-    <loc>https://penguinpig.github.io/categories/</loc>
-    <lastmod>2024-02-02T14:28:06+08:00</lastmod>
-  </url><url>
     <loc>https://penguinpig.github.io/tags/daily/</loc>
-    <lastmod>2024-02-02T14:28:06+08:00</lastmod>
-  </url><url>
-    <loc>https://penguinpig.github.io/categories/daily/</loc>
-    <lastmod>2024-02-02T14:28:06+08:00</lastmod>
-  </url><url>
-    <loc>https://penguinpig.github.io/posts/</loc>
     <lastmod>2024-02-02T14:28:06+08:00</lastmod>
   </url><url>
     <loc>https://penguinpig.github.io/series/environment/</loc>

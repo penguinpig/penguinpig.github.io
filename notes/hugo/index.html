@@ -100,8 +100,8 @@
   "keywords": [
     "hugo", "coomand"
   ],
-  "articleBody": "Basic command hugo new content -k {archetypes} {filename}.md # Create a article and specefic the file type hugo new content {filename}.md -c {path} # Create a file and specific file path ",
-  "wordCount" : "31",
+  "articleBody": "Basic settings 在VsCode裡預覽md的圖片路徑，在hugo production上會存取不到，因為hugo會把static的路徑解析成網站根目錄，例如 source的路徑為 {rootProject}/static/images/test.png md裡寫的路徑為 /static/images/test.png Production的路徑會是 {baseUrl}/images/test.png 解決方式在設定檔新增路徑對應，如下 module: mounts: - source: \"static/images\" #對應source的路徑 target: \"static/static/images\" #對應baseUrl的路徑 Basic command hugo new content -k {archetypes} {filename}.md # Create a article and specefic the file type hugo new content {filename}.md -c {path} # Create a file and specific file path hugo server -e production # Debug with production mode ",
+  "wordCount" : "60",
   "inLanguage": "en",
   "datePublished": "2024-02-01T00:00:00Z",
   "dateModified": "2024-02-01T00:00:00Z",
@@ -215,6 +215,8 @@
 
         <div class="inner"><ul>
                 <li>
+                    <a href="#basic-settings" aria-label="Basic settings">Basic settings</a></li>
+                <li>
                     <a href="#basic-command" aria-label="Basic command">Basic command</a>
                 </li>
             </ul>
@@ -222,9 +224,26 @@
     </details>
 </div>
 
-  <div class="post-content"><h2 id="basic-command">Basic command<a hidden class="anchor" aria-hidden="true" href="#basic-command">#</a></h2>
+  <div class="post-content"><h2 id="basic-settings">Basic settings<a hidden class="anchor" aria-hidden="true" href="#basic-settings">#</a></h2>
+<ol>
+<li>在VsCode裡預覽md的圖片路徑，在hugo production上會存取不到，因為hugo會把static的路徑解析成網站根目錄，例如
+<ul>
+<li>source的路徑為 {rootProject}/static/images/test.png</li>
+<li>md裡寫的路徑為 /static/images/test.png</li>
+<li>Production的路徑會是 {baseUrl}/images/test.png</li>
+<li>解決方式在設定檔新增路徑對應，如下
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">module</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="nt">mounts</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span>- <span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;static/images&#34;</span><span class="w">          </span><span class="c">#對應source的路徑</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;static/static/images&#34;</span><span class="w">   </span><span class="c">#對應baseUrl的路徑</span><span class="w">
+</span></span></span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<h2 id="basic-command">Basic command<a hidden class="anchor" aria-hidden="true" href="#basic-command">#</a></h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">hugo new content -k <span class="o">{</span>archetypes<span class="o">}</span> <span class="o">{</span>filename<span class="o">}</span>.md  <span class="c1"># Create a article and specefic the file type</span>
 </span></span><span class="line"><span class="cl">hugo new content <span class="o">{</span>filename<span class="o">}</span>.md -c <span class="o">{</span>path<span class="o">}</span>        <span class="c1"># Create a file and specific file path</span>
+</span></span><span class="line"><span class="cl">hugo server -e production                       <span class="c1"># Debug with production mode</span>
 </span></span></code></pre></div>
 
   </div>

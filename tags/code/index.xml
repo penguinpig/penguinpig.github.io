@@ -14,14 +14,14 @@
     <lastBuildDate>Thu, 01 Feb 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://penguinpig.github.io/tags/code/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My Linux Note</title>
+      <title>Linux Note</title>
       <link>https://penguinpig.github.io/notes/linux/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
       <guid>https://penguinpig.github.io/notes/linux/</guid>
       <description>Linux Note.</description>
     </item>
     <item>
-      <title>My MicroService Note</title>
+      <title>MicroService Note</title>
       <link>https://penguinpig.github.io/notes/microservice/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
       <guid>https://penguinpig.github.io/notes/microservice/</guid>

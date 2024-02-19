@@ -1,12 +1,12 @@
 ---
 author: ["PenguinPig"]
-title: "My Git Note"
+title: "Git Note"
 date: "2024-02-01"
 description: "Git Note."
 summary: "Git Note."
 tags: ["notes", "linux"]
 categories: ["linux"]
-series: ["My Git Note"]
+series: ["Git Note"]
 ShowToc: true
 TocOpen: true
 ---

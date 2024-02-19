@@ -1,12 +1,12 @@
 ---
 author: ["PenguinPig"]
-title: "My Hugo Note"
+title: "Hugo Note"
 date: "2024-02-01"
-description: "My Hugo Note."
-summary: "My Hugo Note."
+description: "Hugo Note."
+summary: "Hugo Note."
 tags: ["hugo", "coomand"]
 categories: ["hugo"]
-series: ["My Hugo Note"]
+series: ["Hugo Note"]
 ShowToc: true
 TocOpen: true
 ---

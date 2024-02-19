@@ -1,12 +1,12 @@
 ---
 author: ["PenguinPig"]
-title: "My Linux Note"
+title: "Linux Note"
 date: "2024-02-01"
 description: "Linux Note."
 summary: "Linux Note."
 tags: ["notes", "shell", "code"]
 categories: ["linux", "syntax"]
-series: ["My Linux Note"]
+series: ["Linux Note"]
 ShowToc: true
 TocOpen: true
 ---

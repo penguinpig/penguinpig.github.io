@@ -1,12 +1,12 @@
 ---
 author: ["PenguinPig"]
-title: "My MicroService Note"
+title: "MicroService Note"
 date: "2024-02-01"
 description: "MicroService Note."
 summary: "MicroService Note."
-tags: ["notes", "shell", "code"]
+tags: ["shell", "code"]
 categories: ["MicroService", "syntax"]
-series: ["My MicroService Note"]
+series: ["MicroService Note"]
 ShowToc: true
 TocOpen: true
 ---

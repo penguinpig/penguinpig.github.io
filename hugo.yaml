@@ -127,7 +127,7 @@ params:
 
   defaultTheme: auto
   # disableThemeToggle: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowReadingTime: true
   # disableSpecial1stPost: true
   displayFullLangName: true
@@ -164,7 +164,7 @@ params:
   socialIcons:
     - name: github
       title: View Source on Github
-      url: "https://github.com/penguinpig/penguinpig.github.io"
+      url: "https://penguinpig.github.io"
     - name: Discord
       title: Join discord community
       url: "https://discord.gg/EjJavWEK"

@@ -100,7 +100,7 @@
   "keywords": [
     "notes", "linux"
   ],
-  "articleBody": "Git 筆記 Setting ssh Generate ssh key(pulbic \u0026 private) ssh-keygen -t rsa -b 4096 -C \"{email}\" Press three times enter to use default value Check Result ls ~/.ssh -al cat ~/.ssh id_rsa cat ~/.ssh id_rsa.pub Copy public key cat ~/.ssh/id_rsa.pub Apply to GitHub setting Settings \u003e SSH and GPG keys New SSH key Type a name，Add a ssh key Basic command git config --list #Check config list git config --global user.name \"{name}\" #Set name git config --global user.name \"{email}\" #Set email Common problem Can not clone push pull,beacuse prot 22 timeout cd to /etc/ssh sudo vim ssh_config，add the followings Host github.com Hostname ssh.github.com Port 443 ssh -T git@github.com，test command ",
+  "articleBody": "Git 筆記 Setting ssh Generate ssh key(pulbic \u0026 private) ssh-keygen -t rsa -b 4096 -C \"{email}\" Press three times enter to use default value Check Result\nls ~/.ssh -al cat ~/.ssh id_rsa cat ~/.ssh id_rsa.pub Copy public key cat ~/.ssh/id_rsa.pub Apply to GitHub setting Settings \u003e SSH and GPG keys New SSH key Type a name，Add a ssh key Basic command git config --list #Check config list git config --global user.name \"{name}\" #Set name git config --global user.name \"{email}\" #Set email Common problem Can not clone push pull,beacuse prot 22 timeout cd to /etc/ssh sudo vim ssh_config，add the followings Host github.com Hostname ssh.github.com Port 443 ssh -T git@github.com，test command ",
   "wordCount" : "109",
   "inLanguage": "en",
   "datePublished": "2024-02-01T00:00:00Z",
@@ -238,10 +238,14 @@
 </ol>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&#34;{email}&#34;</span>
 </span></span></code></pre></div><ol start="2">
-<li>Press three times enter to use default value
-<img loading="lazy" src="/static/images/GitNote_1.png" alt="Step1"  />
+<li>
+<p>Press three times enter to use default value
+<img loading="lazy" src="../../static/images/GitNote/GitNote_1.png" alt="alt text"  />
+</p>
 </li>
-<li>Check Result</li>
+<li>
+<p>Check Result</p>
+</li>
 </ol>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ls ~/.ssh -al
 </span></span><span class="line"><span class="cl">cat ~/.ssh id_rsa

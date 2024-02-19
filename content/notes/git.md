@@ -19,7 +19,7 @@ TocOpen: true
 ssh-keygen -t rsa -b 4096 -C "{email}"
 ```
 2. Press three times enter to use default value
-![alt text](../../static/images/GitNote/GitNote_1.png)
+![alt text](/static/images/GitNote/GitNote_1.png)
 
 1. Check Result
 ```sh

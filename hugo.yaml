@@ -13,6 +13,13 @@ pygmentsUseClasses: true
 mainsections: ["posts", "papermod"]
 # googleAnalytics: UA-123-45
 
+#Process static file path
+#Defalut static file in production will in root
+module:
+ mounts:
+ - source: "static/images"
+   target: "static/static/images"
+
 minify:
   disableXML: true
   # minifyOutput: true

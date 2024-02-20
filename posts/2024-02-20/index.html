@@ -252,7 +252,7 @@
 </ol>
 </li>
 </ul>
-<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">    sequenceDiagram
+<pre class="mermaid">    sequenceDiagram
     box red command port
     participant client(command)
     participant server(command)
@@ -261,12 +261,13 @@
     participant client(data)
     participant server(data)
     end
-    client(command) -&gt;&gt; server(command): 1
-    server(command) --&gt;&gt; client(command): 2
-    server(command) -&gt;&gt; server(data):*
-    server(data) -&gt;&gt; client(data):3
-    client(data) --&gt;&gt; server(data):4、5
-</code></pre></li>
+    client(command) ->> server(command): 1
+    server(command) -->> client(command): 2
+    server(command) ->> server(data):*
+    server(data) ->> client(data):3
+    client(data) -->> server(data):4、5
+  </pre>
+</li>
 <li><em><strong>Passive FTP</strong></em>
 <ul>
 <li>try to solve problem when use active mode.</li>
@@ -281,7 +282,7 @@
 </ol>
 </li>
 </ul>
-<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">    sequenceDiagram
+<pre class="mermaid">    sequenceDiagram
     box red command port
     participant client(command)
     participant server(command)
@@ -290,12 +291,13 @@
     participant client(data)
     participant server(data)
     end
-    client(command) -&gt;&gt; server(command): 1
-    server(command) --&gt;&gt; client(command): 2
-    client(command) -&gt;&gt; client(data): *
-    client(data) -&gt;&gt; server(data):3
-    server(data) --&gt;&gt; client(data):4、5
-</code></pre></li>
+    client(command) ->> server(command): 1
+    server(command) -->> client(command): 2
+    client(command) ->> client(data): *
+    client(data) ->> server(data):3
+    server(data) -->> client(data):4、5
+  </pre>
+</li>
 </ul>
 </li>
 </ul>
@@ -322,6 +324,12 @@
 
   </footer>
 </article>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
     </main>
     
 <footer class="footer">

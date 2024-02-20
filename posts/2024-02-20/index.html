@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Mybike | PenguinPig Site</title>
-<meta name="keywords" content="bikes">
-<meta name="description" content="Cygnus-x 4th(2016) history list time money items 2024-01-01 NT 100 碗公 CBR 500R 4th(2022) ">
+<title>2024-02-20 | PenguinPig Site</title>
+<meta name="keywords" content="daily">
+<meta name="description" content="FTP problem">
 <meta name="author" content="PenguinPig">
-<link rel="canonical" href="https://penguinpig.github.io/bikes/mybike/">
+<link rel="canonical" href="https://penguinpig.github.io/posts/2024-02-20/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://penguinpig.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://penguinpig.github.io/favicon-16x16.png">
@@ -18,7 +18,7 @@
 <link rel="mask-icon" href="https://penguinpig.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://penguinpig.github.io/bikes/mybike/">
+<link rel="alternate" hreflang="en" href="https://penguinpig.github.io/posts/2024-02-20/">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,20 +55,20 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Mybike" />
-<meta property="og:description" content="Cygnus-x 4th(2016) history list time money items 2024-01-01 NT 100 碗公 CBR 500R 4th(2022) " />
+</noscript><meta property="og:title" content="2024-02-20" />
+<meta property="og:description" content="FTP problem" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://penguinpig.github.io/bikes/mybike/" /><meta property="og:image" content="https://penguinpig.github.io/images/papermod-cover.png"/><meta property="article:section" content="bikes" />
-<meta property="article:published_time" content="2024-02-02T16:57:51+08:00" />
-<meta property="article:modified_time" content="2024-02-02T16:57:51+08:00" />
+<meta property="og:url" content="https://penguinpig.github.io/posts/2024-02-20/" /><meta property="og:image" content="https://penguinpig.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-02-20T10:26:32+08:00" />
+<meta property="article:modified_time" content="2024-02-20T10:26:32+08:00" />
 
 
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://penguinpig.github.io/images/papermod-cover.png"/>
 
-<meta name="twitter:title" content="Mybike"/>
-<meta name="twitter:description" content="Cygnus-x 4th(2016) history list time money items 2024-01-01 NT 100 碗公 CBR 500R 4th(2022) "/>
+<meta name="twitter:title" content="2024-02-20"/>
+<meta name="twitter:description" content="FTP problem"/>
 
 
 <script type="application/ld+json">
@@ -79,14 +79,14 @@
     {
       "@type": "ListItem",
       "position":  1 ,
-      "name": "Bikes",
-      "item": "https://penguinpig.github.io/bikes/"
+      "name": "Posts",
+      "item": "https://penguinpig.github.io/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Mybike",
-      "item": "https://penguinpig.github.io/bikes/mybike/"
+      "name": "2024-02-20",
+      "item": "https://penguinpig.github.io/posts/2024-02-20/"
     }
   ]
 }
@@ -95,24 +95,24 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Mybike",
-  "name": "Mybike",
-  "description": "Cygnus-x 4th(2016) history list time money items 2024-01-01 NT 100 碗公 CBR 500R 4th(2022) ",
+  "headline": "2024-02-20",
+  "name": "2024-02-20",
+  "description": "FTP problem",
   "keywords": [
-    "bikes"
+    "daily"
   ],
-  "articleBody": "Cygnus-x 4th(2016) history list time money items 2024-01-01 NT 100 碗公 CBR 500R 4th(2022) ",
-  "wordCount" : "14",
+  "articleBody": "FTP(File Transfer Protocol) FTP usually use two port\ndata port (defalut {command port - 1}) command port (default 21) Active vs Passive mode\nActive FTP Info: client connect to server command port(21) with random select port(usually \u003e 1024). Notify server use which port to transfer data(usually {N + 1}). Server use data port(20) connect to client specific port. Step detail client send connect request to server command port via self command port and tell server 1027(N+1) is data port. server response ACK to client’s command port. server connect to client data port(1027) via self data port(20). client response ACK to server’s data port. start Transfer data. sequenceDiagram box red command port participant client(command) participant server(command) end box green data port participant client(data) participant server(data) end client(command) -\u003e\u003e server(command): 1 server(command) --\u003e\u003e client(command): 2 server(command) -\u003e\u003e server(data):* server(data) -\u003e\u003e client(data):3 client(data) --\u003e\u003e server(data):4、5 Passive FTP try to solve problem when use active mode. Info: client open two port which is not used(N \u003e 1024 | N \u0026\u0026 N+ 1). Notify server use passive mode and server will response a random port is not used to client(N \u003e 1024). Client use that port transfer data. Step detail client send connect request to server command port via self command port and tell server use passive mode. server response ACK to client’s command port and give a port(1027) used to data transfer. cleint connect to server data port(1027) via self data port(N) server response ACK to client’s data port. start Transfer data. sequenceDiagram box red command port participant client(command) participant server(command) end box green data port participant client(data) participant server(data) end client(command) -\u003e\u003e server(command): 1 server(command) --\u003e\u003e client(command): 2 client(command) -\u003e\u003e client(data): * client(data) -\u003e\u003e server(data):3 server(data) --\u003e\u003e client(data):4、5 Summary Active mode: High risk to client, client need to open a range port open to be used.if not will block by firewall. Passive mode: High risk to server, roles that require open ports become servers. ",
+  "wordCount" : "321",
   "inLanguage": "en",
-  "datePublished": "2024-02-02T16:57:51+08:00",
-  "dateModified": "2024-02-02T16:57:51+08:00",
+  "datePublished": "2024-02-20T10:26:32+08:00",
+  "dateModified": "2024-02-20T10:26:32+08:00",
   "author":[{
     "@type": "Person",
     "name": "PenguinPig"
   }],
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://penguinpig.github.io/bikes/mybike/"
+    "@id": "https://penguinpig.github.io/posts/2024-02-20/"
   },
   "publisher": {
     "@type": "Organization",
@@ -200,11 +200,14 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://penguinpig.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://penguinpig.github.io/bikes/">Bikes</a></div>
+    <div class="breadcrumbs"><a href="https://penguinpig.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://penguinpig.github.io/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
-      Mybike
+      2024-02-20
     </h1>
-    <div class="post-meta"><span title='2024-02-02 16:57:51 +0800 CST'>February 2, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;PenguinPig
+    <div class="post-description">
+      FTP problem
+    </div>
+    <div class="post-meta"><span title='2024-02-20 10:26:32 +0800 CST'>February 20, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;PenguinPig
 
 </div>
   </header> <div class="toc">
@@ -215,46 +218,107 @@
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#cygnus-x-4th2016" aria-label="Cygnus-x 4th(2016)">Cygnus-x 4th(2016)</a><ul>
-                        
+                    <a href="#ftpfile-transfer-protocol" aria-label="FTP(File Transfer Protocol)">FTP(File Transfer Protocol)</a></li>
                 <li>
-                    <a href="#history-list" aria-label="history list">history list</a></li></ul>
-                </li>
-                <li>
-                    <a href="#cbr-500r-4th2022" aria-label="CBR 500R 4th(2022)">CBR 500R 4th(2022)</a>
+                    <a href="#summary" aria-label="Summary">Summary</a>
                 </li>
             </ul>
         </div>
     </details>
 </div>
 
-  <div class="post-content"><h2 id="cygnus-x-4th2016">Cygnus-x 4th(2016)<a hidden class="anchor" aria-hidden="true" href="#cygnus-x-4th2016">#</a></h2>
-<h3 id="history-list">history list<a hidden class="anchor" aria-hidden="true" href="#history-list">#</a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">time</th>
-<th style="text-align:center">money</th>
-<th style="text-align:right">items</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">2024-01-01</td>
-<td style="text-align:center">NT 100</td>
-<td style="text-align:right">碗公</td>
-</tr>
-</tbody>
-</table>
-<h2 id="cbr-500r-4th2022">CBR 500R 4th(2022)<a hidden class="anchor" aria-hidden="true" href="#cbr-500r-4th2022">#</a></h2>
+  <div class="post-content"><h2 id="ftpfile-transfer-protocol">FTP(File Transfer Protocol)<a hidden class="anchor" aria-hidden="true" href="#ftpfile-transfer-protocol">#</a></h2>
+<ul>
+<li>
+<p>FTP usually use two port</p>
+<ul>
+<li>data port (defalut {command port - 1})</li>
+<li>command port (default 21)</li>
+</ul>
+</li>
+<li>
+<p><em><strong>Active vs Passive mode</strong></em></p>
+<ul>
+<li><em><strong>Active FTP</strong></em>
+<ul>
+<li>Info: client connect to server command port(21) with random select port(usually &gt; 1024). Notify server use which port to transfer data(usually {N + 1}). Server use data port(20) connect to client specific port.</li>
+<li>Step detail
+<ol>
+<li>client send connect request to server command port via self command port and tell server 1027(N+1) is data port.</li>
+<li>server response ACK to client&rsquo;s command port.</li>
+<li>server connect to client data port(1027) via self data port(20).</li>
+<li>client response ACK to server&rsquo;s data port.</li>
+<li>start Transfer data.</li>
+</ol>
+</li>
+</ul>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">    sequenceDiagram
+    box red command port
+    participant client(command)
+    participant server(command)
+    end
+    box green data port
+    participant client(data)
+    participant server(data)
+    end
+    client(command) -&gt;&gt; server(command): 1
+    server(command) --&gt;&gt; client(command): 2
+    server(command) -&gt;&gt; server(data):*
+    server(data) -&gt;&gt; client(data):3
+    client(data) --&gt;&gt; server(data):4、5
+</code></pre></li>
+<li><em><strong>Passive FTP</strong></em>
+<ul>
+<li>try to solve problem when use active mode.</li>
+<li>Info: client open two port which is not used(N &gt; 1024 | N &amp;&amp; N+ 1). Notify server use passive mode and server will response a random port is not used to client(N &gt; 1024). Client use that port transfer data.</li>
+<li>Step detail
+<ol>
+<li>client send connect request to server command port via self command port and tell server use passive mode.</li>
+<li>server response ACK to client&rsquo;s command port and give a port(1027) used to data transfer.</li>
+<li>cleint connect to server data port(1027) via self data port(N)</li>
+<li>server response ACK to client&rsquo;s data port.</li>
+<li>start Transfer data.</li>
+</ol>
+</li>
+</ul>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">    sequenceDiagram
+    box red command port
+    participant client(command)
+    participant server(command)
+    end
+    box green data port
+    participant client(data)
+    participant server(data)
+    end
+    client(command) -&gt;&gt; server(command): 1
+    server(command) --&gt;&gt; client(command): 2
+    client(command) -&gt;&gt; client(data): *
+    client(data) -&gt;&gt; server(data):3
+    server(data) --&gt;&gt; client(data):4、5
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h2 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h2>
+<ul>
+<li>Active mode: High risk to client, client need to open a range port open to be used.if not will block by firewall.</li>
+<li>Passive mode: High risk to server, roles that require open ports become servers.</li>
+</ul>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://penguinpig.github.io/tags/bikes/">Bikes</a></li>
+      <li><a href="https://penguinpig.github.io/tags/daily/">Daily</a></li>
     </ul>
+<nav class="paginav">
+  <a class="next" href="https://penguinpig.github.io/posts/2024-02-19/">
+    <span class="title">Next »</span>
+    <br>
+    <span>2024-02-19</span>
+  </a>
+</nav>
 
   </footer>
 </article>

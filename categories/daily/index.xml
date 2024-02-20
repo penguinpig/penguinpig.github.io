@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>daily on PenguinPig Site</title>
+    <title>Daily on PenguinPig Site</title>
     <link>https://penguinpig.github.io/categories/daily/</link>
-    <description>Recent content in daily on PenguinPig Site</description>
+    <description>Recent content in Daily on PenguinPig Site</description>
     <image>
       <title>PenguinPig Site</title>
       <url>https://penguinpig.github.io/images/papermod-cover.png</url>
@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Feb 2024 10:40:46 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 20 Feb 2024 10:26:32 +0800</lastBuildDate>
     <atom:link href="https://penguinpig.github.io/categories/daily/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2024-02-20</title>
+      <link>https://penguinpig.github.io/posts/2024-02-20/</link>
+      <pubDate>Tue, 20 Feb 2024 10:26:32 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-02-20/</guid>
+      <description>FTP problem</description>
+    </item>
     <item>
       <title>2024-02-19</title>
       <link>https://penguinpig.github.io/posts/2024-02-19/</link>

@@ -11,10 +11,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Feb 2024 16:07:16 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 20 Feb 2024 10:26:32 +0800</lastBuildDate>
     <atom:link href="https://penguinpig.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>notes</title>
+      <title>Daily</title>
+      <link>https://penguinpig.github.io/tags/daily/</link>
+      <pubDate>Tue, 20 Feb 2024 10:26:32 +0800</pubDate>
+      <guid>https://penguinpig.github.io/tags/daily/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Notes</title>
       <link>https://penguinpig.github.io/tags/notes/</link>
       <pubDate>Mon, 19 Feb 2024 16:07:16 +0800</pubDate>
       <guid>https://penguinpig.github.io/tags/notes/</guid>
@@ -22,90 +29,83 @@
     </item>
     <item>
       <title>C#</title>
-      <link>https://penguinpig.github.io/tags/c#/</link>
+      <link>https://penguinpig.github.io/tags/c</link>
       <pubDate>Mon, 19 Feb 2024 10:40:46 +0800</pubDate>
-      <guid>https://penguinpig.github.io/tags/c#/</guid>
+      <guid>https://penguinpig.github.io/tags/c</guid>
       <description></description>
     </item>
     <item>
-      <title>html</title>
+      <title>Html</title>
       <link>https://penguinpig.github.io/tags/html/</link>
       <pubDate>Fri, 16 Feb 2024 10:46:51 +0800</pubDate>
       <guid>https://penguinpig.github.io/tags/html/</guid>
       <description></description>
     </item>
     <item>
-      <title>javascript</title>
+      <title>Javascript</title>
       <link>https://penguinpig.github.io/tags/javascript/</link>
       <pubDate>Fri, 16 Feb 2024 10:46:51 +0800</pubDate>
       <guid>https://penguinpig.github.io/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
-      <title>bikes</title>
+      <title>Bikes</title>
       <link>https://penguinpig.github.io/tags/bikes/</link>
       <pubDate>Fri, 02 Feb 2024 16:57:51 +0800</pubDate>
       <guid>https://penguinpig.github.io/tags/bikes/</guid>
       <description></description>
     </item>
     <item>
-      <title>daily</title>
-      <link>https://penguinpig.github.io/tags/daily/</link>
-      <pubDate>Fri, 02 Feb 2024 14:28:06 +0800</pubDate>
-      <guid>https://penguinpig.github.io/tags/daily/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>setting</title>
+      <title>Setting</title>
       <link>https://penguinpig.github.io/tags/setting/</link>
       <pubDate>Thu, 01 Feb 2024 15:45:39 +0800</pubDate>
       <guid>https://penguinpig.github.io/tags/setting/</guid>
       <description></description>
     </item>
     <item>
-      <title>code</title>
+      <title>Code</title>
       <link>https://penguinpig.github.io/tags/code/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
       <guid>https://penguinpig.github.io/tags/code/</guid>
       <description></description>
     </item>
     <item>
-      <title>coomand</title>
+      <title>Coomand</title>
       <link>https://penguinpig.github.io/tags/coomand/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
       <guid>https://penguinpig.github.io/tags/coomand/</guid>
       <description></description>
     </item>
     <item>
-      <title>hugo</title>
+      <title>Hugo</title>
       <link>https://penguinpig.github.io/tags/hugo/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
       <guid>https://penguinpig.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     <item>
-      <title>linux</title>
+      <title>Linux</title>
       <link>https://penguinpig.github.io/tags/linux/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
       <guid>https://penguinpig.github.io/tags/linux/</guid>
       <description></description>
     </item>
     <item>
-      <title>shell</title>
+      <title>Shell</title>
       <link>https://penguinpig.github.io/tags/shell/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
       <guid>https://penguinpig.github.io/tags/shell/</guid>
       <description></description>
     </item>
     <item>
-      <title>powershell</title>
+      <title>Powershell</title>
       <link>https://penguinpig.github.io/tags/powershell/</link>
       <pubDate>Wed, 31 Jan 2024 14:28:06 +0800</pubDate>
       <guid>https://penguinpig.github.io/tags/powershell/</guid>
       <description></description>
     </item>
     <item>
-      <title>script</title>
+      <title>Script</title>
       <link>https://penguinpig.github.io/tags/script/</link>
       <pubDate>Wed, 31 Jan 2024 14:28:06 +0800</pubDate>
       <guid>https://penguinpig.github.io/tags/script/</guid>

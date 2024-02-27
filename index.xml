@@ -97,19 +97,5 @@
       <guid>https://penguinpig.github.io/posts/2024-01-31/</guid>
       <description>Daily Post</description>
     </item>
-    <item>
-      <title>Bikes</title>
-      <link>https://penguinpig.github.io/bikes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://penguinpig.github.io/bikes/</guid>
-      <description>archives</description>
-    </item>
-    <item>
-      <title>Notes</title>
-      <link>https://penguinpig.github.io/notes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://penguinpig.github.io/notes/</guid>
-      <description>archives</description>
-    </item>
   </channel>
 </rss>

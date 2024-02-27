@@ -27,7 +27,7 @@
   {{- end }}
 </header>
 
-{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- $pages := where site.RegularPages "Type" "in" .Summary }}
 
 {{- if site.Params.ShowAllPagesInArchive }}
 {{- $pages = site.RegularPages }}

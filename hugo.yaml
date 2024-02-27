@@ -40,8 +40,8 @@ languages:
         - name: Bike
           url: bikes
           weight: 5
-        - name: Archive
-          url: archives
+        - name: Post
+          url: posts
           weight: 5
         - name: Search
           url: search/
@@ -135,7 +135,7 @@ params:
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   ShowRssButtonInSectionTermList: true
-  ShowAllPagesInArchive: true
+  ShowAllPagesInArchive: false
   ShowPageNums: true
   ShowToc: true
   # comments: false

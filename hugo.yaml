@@ -136,6 +136,7 @@ params:
   ShowCodeCopyButtons: true
   ShowRssButtonInSectionTermList: true
   ShowAllPagesInArchive: false
+  hideSummary: false
   ShowPageNums: true
   ShowToc: true
   # comments: false

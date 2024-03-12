@@ -76,3 +76,10 @@ readlink -f /proc/{pid}/exe #Get process execing path
         firewall-cmd --reload                          #Update change of firewall rule
         firewall-cmd --zone=public --list-ports        #list zone port rlue
     ```
+
+### login without message
+
+- 登入不顯示訊息
+    ```sh
+    touch ~/.hushlogin
+    ```

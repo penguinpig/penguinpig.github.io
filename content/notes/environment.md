@@ -70,6 +70,8 @@ TocOpen: true
           2. 打勾畫面裡的兩個選項，下拉選單選擇剛剛建立的內部網路交換器
        4. 成功安裝Linux後，執行以下命令
           ```sh
+            apt-get clean
+            apt-get update
             apt-get install openssh-server #安裝 Secure Shell Server
             systemctl status ssh #檢查狀態
             ip addr | grep eth0 #檢查IP位置
@@ -206,4 +208,7 @@ TocOpen: true
             systemctl restart ssh
             systemctl restart sshd
           ``` 
-   
+  
+  # Reference
+  + [How to setup xRDP for Ubuntu 20.04 in Windows Hyper-V](https://askubuntu.com/questions/1246362/how-to-setup-xrdp-for-ubuntu-20-04-in-windows-hyper-v)
+  

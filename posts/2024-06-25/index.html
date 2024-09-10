@@ -55,10 +55,7 @@
         }
 
     </style>
-</noscript>
-  
-
-<meta property="og:title" content="2024-06-25" />
+</noscript><meta property="og:title" content="2024-06-25" />
 <meta property="og:description" content="Daily Post" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://penguinpig.github.io/posts/2024-06-25/" /><meta property="og:image" content="https://penguinpig.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
@@ -98,8 +95,8 @@
   "keywords": [
     "daily"
   ],
-  "articleBody": "部門會議 建議安裝 Window terminal\n推薦原因 : intellisense Microsoft Store 裡可搜尋並安裝 Powershell 7\n推薦原因 : 可使用更接近C#的語法 遠端存取控制(window、linux) window 工具 : winrm 語言 : powershell 簡易使用方式 # --- 遠端登入 --- # Enter-PSsession ${IP} # --- 設定 --- # Get-Service -Name winrm #確認服務狀態 winrm quickconfig #初次使用時，先下這個 winrm get winrm/config/client #確認TrustedHost，用於不輸入Credential winrm set winrm/config/client '@{TrustedHosts=\"\"}' #設定TrustedHost linux 工具 : ssh 語言 : shell 簡易使用方式 # --- 遠端登入 --- # ssh {userName}@{IP} # --- 無密碼登入 --- # ssh-keygen #在本機產生金鑰對 ssh-copy-id {RemoteServer}@{userName} #將上一個步驟產生的公鑰複製到遠端伺服器上 ",
-  "wordCount" : "77",
+  "articleBody": "部門會議 建議安裝 Window terminal\n推薦原因 : intellisense Microsoft Store 裡可搜尋並安裝 Powershell 7\n推薦原因 : 可使用更接近C#的語法 遠端存取控制(window、linux) window 工具 : winrm 語言 : powershell 簡易使用方式 # --- 遠端登入 --- # Enter-PSsession ${IP} # --- 設定 --- # Get-Service -Name winrm #確認服務狀態 winrm quickconfig #初次使用時，先下這個 winrm get winrm/config/client #確認TrustedHost，用於不輸入Credential winrm set winrm/config/client '@{TrustedHosts=\"\"}' #設定TrustedHost linux 工具 : ssh 語言 : shell 簡易使用方式 # --- 遠端登入 --- # ssh {userName}@{IP} # --- 無密碼登入 --- # ssh-keygen #在本機產生金鑰對 ssh-copy-id {RemoteServer}@{userName} #將上一個步驟產生的公鑰複製到遠端伺服器上，路徑:~/.ssh/authorized_keys 疑難排解 PowerShell function return # --- sample 1 --- function a { $test = \"123\" $test } $b = a $b # --- sample 2 --- function a { $test = \"123\" return $test } $b = a $b 沒有的指令 # --- sample 1 --- dir $elem /a-d/s \u003e TimeStamp_$elem.txt # --- sample 2 --- \u0026 \"C:\\WINDOWS\\system32\\cmd.exe\" \"/c dir $elem /a-d/s \u003e TimeStamp_$elem.txt\" ",
+  "wordCount" : "140",
   "inLanguage": "en",
   "datePublished": "2024-06-25T14:16:56+08:00",
   "dateModified": "2024-06-25T14:16:56+08:00",
@@ -225,7 +222,13 @@
                 <li>
                     <a href="#window" aria-label="window">window</a></li>
                 <li>
-                    <a href="#linux" aria-label="linux">linux</a>
+                    <a href="#linux" aria-label="linux">linux</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e7%96%91%e9%9b%a3%e6%8e%92%e8%a7%a3" aria-label="疑難排解">疑難排解</a><ul>
+                        
+                <li>
+                    <a href="#powershell" aria-label="PowerShell">PowerShell</a>
                 </li>
             </ul>
             </li>
@@ -279,7 +282,33 @@
 </span></span><span class="line"><span class="cl">ssh <span class="o">{</span>userName<span class="o">}</span>@<span class="o">{</span>IP<span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># --- 無密碼登入 --- #</span>
 </span></span><span class="line"><span class="cl">ssh-keygen <span class="c1">#在本機產生金鑰對</span>
-</span></span><span class="line"><span class="cl">ssh-copy-id <span class="o">{</span>RemoteServer<span class="o">}</span>@<span class="o">{</span>userName<span class="o">}</span> <span class="c1">#將上一個步驟產生的公鑰複製到遠端伺服器上</span>
+</span></span><span class="line"><span class="cl">ssh-copy-id <span class="o">{</span>RemoteServer<span class="o">}</span>@<span class="o">{</span>userName<span class="o">}</span> <span class="c1">#將上一個步驟產生的公鑰複製到遠端伺服器上，路徑:~/.ssh/authorized_keys</span>
+</span></span></code></pre></div><h2 id="疑難排解">疑難排解<a hidden class="anchor" aria-hidden="true" href="#疑難排解">#</a></h2>
+<h3 id="powershell">PowerShell<a hidden class="anchor" aria-hidden="true" href="#powershell">#</a></h3>
+<ul>
+<li>function return</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># --- sample 1 ---</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">function</span><span class="w"> </span><span class="nb">a</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">$test</span> <span class="p">=</span> <span class="s2">&#34;123&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">$test</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">$b</span> <span class="p">=</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">$b</span>
+</span></span><span class="line"><span class="cl"><span class="c"># --- sample 2 ---</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">function</span><span class="w"> </span><span class="nb">a</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">$test</span> <span class="p">=</span> <span class="s2">&#34;123&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nv">$test</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">$b</span> <span class="p">=</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">$b</span>
+</span></span></code></pre></div><ul>
+<li>沒有的指令</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># --- sample 1 ---</span>
+</span></span><span class="line"><span class="cl"><span class="nb">dir </span><span class="nv">$elem</span> <span class="p">/</span><span class="nb">a-d</span><span class="p">/</span><span class="n">s</span> <span class="p">&gt;</span> <span class="n">TimeStamp_</span><span class="nv">$elem</span><span class="p">.</span><span class="py">txt</span>
+</span></span><span class="line"><span class="cl"><span class="c"># --- sample 2 ---</span>
+</span></span><span class="line"><span class="cl"><span class="p">&amp;</span> <span class="s2">&#34;C:\WINDOWS\system32\cmd.exe&#34;</span> <span class="s2">&#34;/c dir </span><span class="nv">$elem</span><span class="s2"> /a-d/s &gt; TimeStamp_</span><span class="nv">$elem</span><span class="s2">.txt&#34;</span>
 </span></span></code></pre></div>
 
   </div>
@@ -289,6 +318,11 @@
       <li><a href="https://penguinpig.github.io/tags/daily/">Daily</a></li>
     </ul>
 <nav class="paginav">
+  <a class="prev" href="https://penguinpig.github.io/posts/2024-09-10/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>2024-09-10</span>
+  </a>
   <a class="next" href="https://penguinpig.github.io/posts/2024-06-07/">
     <span class="title">Next »</span>
     <br>

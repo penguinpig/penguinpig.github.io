@@ -1,9 +1,5 @@
 pipeline{    
-    agent {
-        node {
-            label 'master'
-        }
-    }
+    agent any
     stages {
         stage('Setting config'){
             sh 'git config --global user.email "penguinpig0120@gmail.com"'

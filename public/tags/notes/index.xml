@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on PenguinPig Site</title>
+    <link>https://penguinpig.github.io/tags/notes/</link>
+    <description>Recent content in Notes on PenguinPig Site</description>
+    <image>
+      <title>PenguinPig Site</title>
+      <url>https://penguinpig.github.io/images/papermod-cover.png</url>
+      <link>https://penguinpig.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 11 Sep 2024 14:40:18 +0800</lastBuildDate>
+    <atom:link href="https://penguinpig.github.io/tags/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cicd</title>
+      <link>https://penguinpig.github.io/notes/cicd/</link>
+      <pubDate>Wed, 11 Sep 2024 14:40:18 +0800</pubDate>
+      <guid>https://penguinpig.github.io/notes/cicd/</guid>
+      <description>Cicd Note.</description>
+    </item>
+    <item>
+      <title>IsolateDevEnv</title>
+      <link>https://penguinpig.github.io/notes/isolatedevenv/</link>
+      <pubDate>Wed, 05 Jun 2024 11:25:29 +0800</pubDate>
+      <guid>https://penguinpig.github.io/notes/isolatedevenv/</guid>
+      <description>IsolateDevEnv Note.</description>
+    </item>
+    <item>
+      <title>Mac</title>
+      <link>https://penguinpig.github.io/notes/mac/</link>
+      <pubDate>Tue, 09 Apr 2024 10:32:51 +0800</pubDate>
+      <guid>https://penguinpig.github.io/notes/mac/</guid>
+      <description>Mac Note.</description>
+    </item>
+    <item>
+      <title>Algorithm</title>
+      <link>https://penguinpig.github.io/notes/algorithm/</link>
+      <pubDate>Mon, 25 Mar 2024 10:03:06 +0800</pubDate>
+      <guid>https://penguinpig.github.io/notes/algorithm/</guid>
+      <description>Algorithm Note.</description>
+    </item>
+    <item>
+      <title>RemoteSetting</title>
+      <link>https://penguinpig.github.io/notes/remotesetting/</link>
+      <pubDate>Fri, 01 Mar 2024 09:57:06 +0800</pubDate>
+      <guid>https://penguinpig.github.io/notes/remotesetting/</guid>
+      <description>RemoteSetting Note.</description>
+    </item>
+    <item>
+      <title>Powershell</title>
+      <link>https://penguinpig.github.io/notes/powershell/</link>
+      <pubDate>Mon, 19 Feb 2024 16:07:16 +0800</pubDate>
+      <guid>https://penguinpig.github.io/notes/powershell/</guid>
+      <description>Powershell Note.</description>
+    </item>
+    <item>
+      <title>environment settings</title>
+      <link>https://penguinpig.github.io/notes/environment/</link>
+      <pubDate>Thu, 01 Feb 2024 15:45:39 +0800</pubDate>
+      <guid>https://penguinpig.github.io/notes/environment/</guid>
+      <description>environment settings.</description>
+    </item>
+    <item>
+      <title>Git Note</title>
+      <link>https://penguinpig.github.io/notes/git/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://penguinpig.github.io/notes/git/</guid>
+      <description>Git Note.</description>
+    </item>
+    <item>
+      <title>Linux Note</title>
+      <link>https://penguinpig.github.io/notes/linux/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://penguinpig.github.io/notes/linux/</guid>
+      <description>Linux Note.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PenguinPig Site</title>
+    <link>https://penguinpig.github.io/</link>
+    <description>Recent content on PenguinPig Site</description>
+    <image>
+      <title>PenguinPig Site</title>
+      <url>https://penguinpig.github.io/images/papermod-cover.png</url>
+      <link>https://penguinpig.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 11 Sep 2024 14:40:18 +0800</lastBuildDate>
+    <atom:link href="https://penguinpig.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cicd</title>
+      <link>https://penguinpig.github.io/notes/cicd/</link>
+      <pubDate>Wed, 11 Sep 2024 14:40:18 +0800</pubDate>
+      <guid>https://penguinpig.github.io/notes/cicd/</guid>
+      <description>Cicd Note.</description>
+    </item>
+    <item>
+      <title>2024-09-10</title>
+      <link>https://penguinpig.github.io/posts/2024-09-10/</link>
+      <pubDate>Tue, 10 Sep 2024 09:46:41 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-09-10/</guid>
+      <description>Daily Post</description>
+    </item>
+    <item>
+      <title>2024-06-25</title>
+      <link>https://penguinpig.github.io/posts/2024-06-25/</link>
+      <pubDate>Tue, 25 Jun 2024 14:16:56 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-06-25/</guid>
+      <description>Daily Post</description>
+    </item>
+    <item>
+      <title>2024-06-07</title>
+      <link>https://penguinpig.github.io/posts/2024-06-07/</link>
+      <pubDate>Wed, 05 Jun 2024 17:50:34 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-06-07/</guid>
+      <description>Daily Post</description>
+    </item>
+    <item>
+      <title>IsolateDevEnv</title>
+      <link>https://penguinpig.github.io/notes/isolatedevenv/</link>
+      <pubDate>Wed, 05 Jun 2024 11:25:29 +0800</pubDate>
+      <guid>https://penguinpig.github.io/notes/isolatedevenv/</guid>
+      <description>IsolateDevEnv Note.</description>
+    </item>
+    <item>
+      <title>2024-05-13</title>
+      <link>https://penguinpig.github.io/posts/2024-05-13/</link>
+      <pubDate>Mon, 13 May 2024 15:33:07 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-05-13/</guid>
+      <description>Daily vocabulary</description>
+    </item>
+    <item>
+      <title>2024-05-09</title>
+      <link>https://penguinpig.github.io/posts/2024-05-09/</link>
+      <pubDate>Thu, 09 May 2024 10:26:59 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-05-09/</guid>
+      <description>Daily vocabulary</description>
+    </item>
+    <item>
+      <title>2024-05-04</title>
+      <link>https://penguinpig.github.io/posts/2024-05-04/</link>
+      <pubDate>Sat, 04 May 2024 08:31:11 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-05-04/</guid>
+      <description>Daily vocabulary</description>
+    </item>
+    <item>
+      <title>2024-05-03</title>
+      <link>https://penguinpig.github.io/posts/2024-05-03/</link>
+      <pubDate>Fri, 03 May 2024 10:10:22 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-05-03/</guid>
+      <description>Daily vocabulary</description>
+    </item>
+    <item>
+      <title>2024-05-02</title>
+      <link>https://penguinpig.github.io/posts/2024-05-02/</link>
+      <pubDate>Thu, 02 May 2024 10:30:35 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-05-02/</guid>
+      <description>Daily vocabulary</description>
+    </item>
+    <item>
+      <title>2024-04-25</title>
+      <link>https://penguinpig.github.io/posts/2024-04-25/</link>
+      <pubDate>Thu, 25 Apr 2024 14:10:01 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-04-25/</guid>
+      <description>Daily vocabulary</description>
+    </item>
+    <item>
+      <title>2024-04-15</title>
+      <link>https://penguinpig.github.io/posts/2024-04-15/</link>
+      <pubDate>Mon, 15 Apr 2024 10:58:04 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-04-15/</guid>
+      <description>Daily vocabulary</description>
+    </item>
+    <item>
+      <title>2024-04-12</title>
+      <link>https://penguinpig.github.io/posts/2024-04-12/</link>
+      <pubDate>Fri, 12 Apr 2024 10:35:02 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-04-12/</guid>
+      <description>Daily vocabulary</description>
+    </item>
+    <item>
+      <title>2024-04-10</title>
+      <link>https://penguinpig.github.io/posts/2024-04-10/</link>
+      <pubDate>Wed, 10 Apr 2024 10:14:58 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-04-10/</guid>
+      <description>Daily vocabulary</description>
+    </item>
+    <item>
+      <title>Mac</title>
+      <link>https://penguinpig.github.io/notes/mac/</link>
+      <pubDate>Tue, 09 Apr 2024 10:32:51 +0800</pubDate>
+      <guid>https://penguinpig.github.io/notes/mac/</guid>
+      <description>Mac Note.</description>
+    </item>
+    <item>
+      <title>Algorithm</title>
+      <link>https://penguinpig.github.io/notes/algorithm/</link>
+      <pubDate>Mon, 25 Mar 2024 10:03:06 +0800</pubDate>
+      <guid>https://penguinpig.github.io/notes/algorithm/</guid>
+      <description>Algorithm Note.</description>
+    </item>
+    <item>
+      <title>RemoteSetting</title>
+      <link>https://penguinpig.github.io/notes/remotesetting/</link>
+      <pubDate>Fri, 01 Mar 2024 09:57:06 +0800</pubDate>
+      <guid>https://penguinpig.github.io/notes/remotesetting/</guid>
+      <description>RemoteSetting Note.</description>
+    </item>
+    <item>
+      <title>2024-02-20</title>
+      <link>https://penguinpig.github.io/posts/2024-02-20/</link>
+      <pubDate>Tue, 20 Feb 2024 10:26:32 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-02-20/</guid>
+      <description>FTP problem</description>
+    </item>
+    <item>
+      <title>Powershell</title>
+      <link>https://penguinpig.github.io/notes/powershell/</link>
+      <pubDate>Mon, 19 Feb 2024 16:07:16 +0800</pubDate>
+      <guid>https://penguinpig.github.io/notes/powershell/</guid>
+      <description>Powershell Note.</description>
+    </item>
+    <item>
+      <title>2024-02-19</title>
+      <link>https://penguinpig.github.io/posts/2024-02-19/</link>
+      <pubDate>Mon, 19 Feb 2024 10:40:46 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-02-19/</guid>
+      <description>C Sharp await usage</description>
+    </item>
+    <item>
+      <title>2024-02-16</title>
+      <link>https://penguinpig.github.io/posts/2024-02-16/</link>
+      <pubDate>Fri, 16 Feb 2024 10:46:51 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-02-16/</guid>
+      <description>Html event order</description>
+    </item>
+    <item>
+      <title>Mybike</title>
+      <link>https://penguinpig.github.io/bikes/mybike/</link>
+      <pubDate>Fri, 02 Feb 2024 16:57:51 +0800</pubDate>
+      <guid>https://penguinpig.github.io/bikes/mybike/</guid>
+      <description>&lt;h2 id=&#34;cygnus-x-4th2016&#34;&gt;Cygnus-x 4th(2016)&lt;/h2&gt;
+&lt;h3 id=&#34;history-list&#34;&gt;history list&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;time&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;money&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;items&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2024-01-01&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;NT 100&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;碗公&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;cbr-500r-4th2022&#34;&gt;CBR 500R 4th(2022)&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>2024-02-02</title>
+      <link>https://penguinpig.github.io/posts/2024-02-02/</link>
+      <pubDate>Fri, 02 Feb 2024 14:28:06 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-02-02/</guid>
+      <description>Daily Post</description>
+    </item>
+    <item>
+      <title>environment settings</title>
+      <link>https://penguinpig.github.io/notes/environment/</link>
+      <pubDate>Thu, 01 Feb 2024 15:45:39 +0800</pubDate>
+      <guid>https://penguinpig.github.io/notes/environment/</guid>
+      <description>environment settings.</description>
+    </item>
+    <item>
+      <title>Git Note</title>
+      <link>https://penguinpig.github.io/notes/git/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://penguinpig.github.io/notes/git/</guid>
+      <description>Git Note.</description>
+    </item>
+    <item>
+      <title>Hugo Note</title>
+      <link>https://penguinpig.github.io/notes/hugo/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://penguinpig.github.io/notes/hugo/</guid>
+      <description>Hugo Note.</description>
+    </item>
+    <item>
+      <title>Linux Note</title>
+      <link>https://penguinpig.github.io/notes/linux/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://penguinpig.github.io/notes/linux/</guid>
+      <description>Linux Note.</description>
+    </item>
+    <item>
+      <title>MicroService Note</title>
+      <link>https://penguinpig.github.io/notes/microservice/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://penguinpig.github.io/notes/microservice/</guid>
+      <description>MicroService Note.</description>
+    </item>
+    <item>
+      <title>2024-01-31</title>
+      <link>https://penguinpig.github.io/posts/2024-01-31/</link>
+      <pubDate>Wed, 31 Jan 2024 14:28:06 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-01-31/</guid>
+      <description>Simple Script</description>
+    </item>
+  </channel>
+</rss>

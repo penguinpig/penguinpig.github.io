@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bikes on PenguinPig Site</title>
+    <link>https://penguinpig.github.io/tags/bikes/</link>
+    <description>Recent content in Bikes on PenguinPig Site</description>
+    <image>
+      <title>PenguinPig Site</title>
+      <url>https://penguinpig.github.io/images/papermod-cover.png</url>
+      <link>https://penguinpig.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 02 Feb 2024 16:57:51 +0800</lastBuildDate>
+    <atom:link href="https://penguinpig.github.io/tags/bikes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mybike</title>
+      <link>https://penguinpig.github.io/bikes/mybike/</link>
+      <pubDate>Fri, 02 Feb 2024 16:57:51 +0800</pubDate>
+      <guid>https://penguinpig.github.io/bikes/mybike/</guid>
+      <description>&lt;h2 id=&#34;cygnus-x-4th2016&#34;&gt;Cygnus-x 4th(2016)&lt;/h2&gt;
+&lt;h3 id=&#34;history-list&#34;&gt;history list&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;time&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;money&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;items&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2024-01-01&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;NT 100&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;碗公&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;cbr-500r-4th2022&#34;&gt;CBR 500R 4th(2022)&lt;/h2&gt;</description>
+    </item>
+  </channel>
+</rss>

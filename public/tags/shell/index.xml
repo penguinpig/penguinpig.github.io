@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shell on PenguinPig Site</title>
+    <link>https://penguinpig.github.io/tags/shell/</link>
+    <description>Recent content in Shell on PenguinPig Site</description>
+    <image>
+      <title>PenguinPig Site</title>
+      <url>https://penguinpig.github.io/images/papermod-cover.png</url>
+      <link>https://penguinpig.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Sep 2024 09:46:41 +0800</lastBuildDate>
+    <atom:link href="https://penguinpig.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2024-09-10</title>
+      <link>https://penguinpig.github.io/posts/2024-09-10/</link>
+      <pubDate>Tue, 10 Sep 2024 09:46:41 +0800</pubDate>
+      <guid>https://penguinpig.github.io/posts/2024-09-10/</guid>
+      <description>Daily Post</description>
+    </item>
+    <item>
+      <title>Linux Note</title>
+      <link>https://penguinpig.github.io/notes/linux/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://penguinpig.github.io/notes/linux/</guid>
+      <description>Linux Note.</description>
+    </item>
+    <item>
+      <title>MicroService Note</title>
+      <link>https://penguinpig.github.io/notes/microservice/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://penguinpig.github.io/notes/microservice/</guid>
+      <description>MicroService Note.</description>
+    </item>
+  </channel>
+</rss>

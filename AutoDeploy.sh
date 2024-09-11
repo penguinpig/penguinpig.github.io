@@ -17,8 +17,11 @@ git checkout master
 #Get public folder fom "git stash pop"
 git stash pop
 
-#git Add everything
-git add .
+#git undo Add everything
+git reset .
+
+#Move public/* to parent
+mv public/ ..
 
 #commit to master
 git commit -m "$msg"

@@ -4,8 +4,8 @@ pipeline{
     stages {
         stage('Setting config'){
             steps{
-                sh 'git config --global user.email "penguinpig0120@gmail.com"'
-                sh 'git config --global user.name  "Jenkins"'
+                sh 'whoami'
+                sh 'git config --list --show-origin'
             }
         }
         stage('Checkout') {

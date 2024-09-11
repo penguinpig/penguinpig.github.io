@@ -175,7 +175,7 @@
   <div class="entry-content">
     <p>部門會議 建議安裝 Window terminal
 推薦原因 : intellisense Microsoft Store 裡可搜尋並安裝 Powershell 7
-推薦原因 : 可使用更接近C#的語法 遠端存取控制(window、linux) window 工具 : winrm 語言 : powershell 簡易使用方式 # --- 遠端登入 --- # Enter-PSsession ${IP} # --- 設定 --- # Get-Service -Name winrm #確認服務狀態 winrm quickconfig #初次使用時，先下這個 winrm get winrm/config/client #確認TrustedHost，用於不輸入Credential winrm set winrm/config/client &#39;@{TrustedHosts=&#34;&#34;}&#39; #設定TrustedHost ...</p>
+推薦原因 : 可使用更接近C#的語法 遠端存取控制(window、linux) window 工具 : winrm 語言 : powershell 簡易使用方式 # --- 遠端登入 --- # Enter-PSsession ${IP} # --- 設定 --- # Get-Service -Name winrm #確認服務狀態 winrm quickconfig #初次使用時，先下這個 winrm get winrm/config/client #確認TrustedHost，用於不輸入Credential winrm set winrm/config/client &#39;@{TrustedHosts=&#34;&#34;}&#39; #設定TrustedHost linux 工具 : ssh 語言 : shell 簡易使用方式 # --- 遠端登入 --- # ssh {userName}@{IP} # --- 無密碼登入 --- # ssh-keygen #在本機產生金鑰對 ssh-copy-id {RemoteServer}@{userName} #將上一個步驟產生的公鑰複製到遠端伺服器上，路徑:~/.ssh/authorized_keys 疑難排解 PowerShell function return # --- sample 1 --- function a { $test = &#34;123&#34; $test } $b = a $b # --- sample 2 --- function a { $test = &#34;123&#34; return $test } $b = a $b 沒有的指令 # --- sample 1 --- dir $elem /a-d/s &gt; TimeStamp_$elem.txt # --- sample 2 --- &amp; &#34;C:\WINDOWS\system32\cmd.exe&#34; &#34;/c dir $elem /a-d/s &gt; TimeStamp_$elem.txt&#34; </p>
   </div>
   <footer class="entry-footer"><span title='2024-06-25 14:16:56 +0800 CST'>June 25, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;PenguinPig</footer>
   <a class="entry-link" aria-label="post link to 2024-06-25" href="https://penguinpig.github.io/posts/2024-06-25/"></a>

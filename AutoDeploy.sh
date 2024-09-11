@@ -7,20 +7,15 @@ echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 #build site
 hugo
 
-#Copy public folder to parent
-cp -r ./public ..
-
-#Remove public folder current pwd
-rm -r ./public
+#Save public folder by git stash
+git add -f public
+git stash save "temp"
 
 #Change git branch to master
 git checkout master
 
-#Copy public folder to current pwd
-cp -r ../public/* ./
-
-#Remove public folder on parent
-rm -r ../public
+#Get public folder fom "git stash pop"
+git stash pop
 
 #git Add everything
 git add .

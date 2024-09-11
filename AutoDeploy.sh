@@ -20,8 +20,8 @@ git stash pop
 #git undo Add everything
 git reset .
 
-#Move public/* to parent
-mv public/ ..
+#Copy public/* to parent and delete public
+cp -r public/* . && rm -r public
 
 #git add everything
 git add .

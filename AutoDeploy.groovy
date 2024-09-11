@@ -10,6 +10,7 @@ pipeline{
         }
         stage('Checkout') {
             steps {
+                git(url: 'git@github.com:penguinpig/penguinpig.github.io.git', branch: 'master')
                 git(url: 'git@github.com:penguinpig/penguinpig.github.io.git', branch: 'dev')
             }
         }

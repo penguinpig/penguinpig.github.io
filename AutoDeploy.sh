@@ -23,6 +23,9 @@ git reset .
 #Move public/* to parent
 mv public/ ..
 
+#git add everything
+git add .
+
 #commit to master
 git commit -m "$msg"
 

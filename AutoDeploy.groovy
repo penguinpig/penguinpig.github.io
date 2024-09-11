@@ -1,9 +1,12 @@
 pipeline{    
     agent any
+    
     stages {
         stage('Setting config'){
-            sh 'git config --global user.email "penguinpig0120@gmail.com"'
-            sh 'git config --global user.name  "Jenkins"'
+            steps{
+                sh 'git config --global user.email "penguinpig0120@gmail.com"'
+                sh 'git config --global user.name  "Jenkins"'
+            }
         }
         stage('Checkout') {
             steps {

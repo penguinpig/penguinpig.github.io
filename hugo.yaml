@@ -40,6 +40,9 @@ languages:
         - name: Bike
           url: bikes
           weight: 5
+        - name: Read
+          url: reads
+          weight: 5
         - name: Post
           url: posts
           weight: 5

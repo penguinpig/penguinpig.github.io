@@ -1,7 +1,7 @@
 ---
 author: ["PenguinPig"]
 title: "Powershell"
-date: "2024-02-19T16:07:16+08:00"
+date: "2024-02-19"
 description: "Powershell Note."        # 文章簡易描述(顯示在文章最上頭文件標題之前)
 summary: "Powershell Note."            # 文章概要    (顯示在首頁供快速查看)
 tags: ["notes"]

@@ -1,7 +1,7 @@
 ---
 author: ["PenguinPig"]
 title: "environment settings"
-date: "2024-02-01T15:45:39+08:00"
+date: "2024-02-01"
 description: "environment settings."
 summary: "environment settings."
 tags: ["notes","setting"]

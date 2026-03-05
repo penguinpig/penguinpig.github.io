@@ -1,7 +1,7 @@
 ---
 author: ["PenguinPig"]
 title: "RemoteSetting"
-date: "2024-03-01T09:57:06+08:00"
+date: "2024-03-01"
 description: "RemoteSetting Note."        # 文章簡易描述(顯示在文章最上頭文件標題之前)
 summary: "RemoteSetting Note."            # 文章概要    (顯示在首頁供快速查看)
 tags: ["notes"]
@@ -55,4 +55,5 @@ TocOpen: true
     ```powershell
     Enter-PSsessin {serverIP}
     ``` 
+
 

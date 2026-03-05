@@ -1,0 +1,1 @@
+FROM hugomods/hugo:debian-nightly-non-root

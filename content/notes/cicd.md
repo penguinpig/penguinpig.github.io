@@ -1,7 +1,7 @@
 ---
 author: ["PenguinPig"]
 title: "Cicd"
-date: "2024-09-11T14:40:18+08:00"
+date: "2024-09-11"
 description: "Cicd Note."        # 文章簡易描述(顯示在文章最上頭文件標題之前)
 summary: "Cicd Note."            # 文章概要    (顯示在首頁供快速查看)
 tags: ["notes"]
@@ -29,3 +29,4 @@ TocOpen: true
 + 讓環境上的版本和遠端存放庫的版本一致
 
 ## Jenkins（工具心得）
+

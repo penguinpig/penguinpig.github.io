@@ -4,8 +4,8 @@ msg="build stie_$(date '+%Y-%m-%d.%H%M')"
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
-#build site
-hugo
+#build site by docker
+docker run --rm -v "${PWD}:/src" -w /src hugomods/hugo:debian-nightly-non-root build
 
 #Save public folder by git stash
 git add -f public

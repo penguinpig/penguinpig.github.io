@@ -11,6 +11,7 @@ $ErrorActionPreference = "Stop"
 $msg = "build site_$(Get-Date -Format 'yyyy-MM-dd.HHmm')"
 $repoRoot = (Get-Location).Path
 $publicDir = Join-Path $repoRoot "public"
+$sourceReadme = Join-Path $repoRoot "README.md"
 $deployDir = Join-Path $repoRoot ".deploy_worktree"
 $worktreeReady = $false
 $commitCreated = $false
@@ -64,11 +65,11 @@ try {
     )
 
     Get-ChildItem -LiteralPath $deployDir -Force |
-        Where-Object {
-            $_.Name -ne ".git" -and
-            ($preserveRootNames -notcontains $_.Name)
-        } |
-        Remove-Item -Recurse -Force
+    Where-Object {
+        $_.Name -ne ".git" -and
+        ($preserveRootNames -notcontains $_.Name)
+    } |
+    Remove-Item -Recurse -Force
 
     Get-ChildItem -LiteralPath $publicDir -Force | ForEach-Object {
         Copy-Item -LiteralPath $_.FullName -Destination $deployDir -Recurse -Force
@@ -78,6 +79,12 @@ try {
     if ($LASTEXITCODE -ne 0) {
         throw "git add failed."
     }
+
+    # Keep repository front page readable on GitHub (default branch README).                                                         
+    if (Test-Path -LiteralPath $sourceReadme -PathType Leaf) {                                                                       
+        Copy-Item -LiteralPath $sourceReadme -Destination (Join-Path $deployDir "README.md") -Force                                  
+    }                                                                                                                                
+           
 
     & git -C $deployDir diff --cached --quiet
     if ($LASTEXITCODE -eq 0) {

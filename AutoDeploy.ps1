@@ -1,20 +1,38 @@
+param(
+    [string]$DeployBranch = "master",
+    [switch]$NoPush,
+    [switch]$SkipBuild,
+    [string[]]$PreservePaths = @(".github")
+)
+
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
 $msg = "build site_$(Get-Date -Format 'yyyy-MM-dd.HHmm')"
-$deployBranch = "master"
 $repoRoot = (Get-Location).Path
 $publicDir = Join-Path $repoRoot "public"
 $deployDir = Join-Path $repoRoot ".deploy_worktree"
 $worktreeReady = $false
+$commitCreated = $false
+$commitHash = ""
+
+function Get-RootName([string]$Path) {
+    $trimmed = $Path.Trim().TrimStart("/", "\")
+    if ([string]::IsNullOrWhiteSpace($trimmed)) {
+        return ""
+    }
+    return ($trimmed -split "[/\\]")[0]
+}
 
 try {
     Write-Host "Deploying updates to GitHub..." -ForegroundColor Green
 
     # Build site with Docker Hugo image.
-    & docker run --rm -v "${repoRoot}:/src" -w /src hugomods/hugo:debian-nightly-non-root build
-    if ($LASTEXITCODE -ne 0) {
-        throw "Hugo build failed."
+    if (-not $SkipBuild) {
+        & docker run --rm -v "${repoRoot}:/src" -w /src hugomods/hugo:debian-nightly-non-root build --minify
+        if ($LASTEXITCODE -ne 0) {
+            throw "Hugo build failed."
+        }
     }
 
     if (-not (Test-Path -LiteralPath $publicDir -PathType Container)) {
@@ -22,7 +40,7 @@ try {
     }
 
     # Fetch latest deploy branch and create an isolated worktree.
-    & git fetch origin $deployBranch
+    & git fetch origin $DeployBranch
     if ($LASTEXITCODE -ne 0) {
         throw "git fetch failed."
     }
@@ -31,15 +49,25 @@ try {
         & git worktree remove $deployDir --force | Out-Null
     }
 
-    & git worktree add -B $deployBranch $deployDir "origin/$deployBranch"
+    & git worktree add -B $DeployBranch $deployDir "origin/$DeployBranch"
     if ($LASTEXITCODE -ne 0) {
         throw "git worktree add failed."
     }
     $worktreeReady = $true
 
-    # Replace deploy branch contents with generated public site.
+    # Replace deploy branch contents with generated public site, while preserving selected paths.
+    $preserveRootNames = @(
+        $PreservePaths |
+        ForEach-Object { Get-RootName $_ } |
+        Where-Object { -not [string]::IsNullOrWhiteSpace($_) } |
+        Sort-Object -Unique
+    )
+
     Get-ChildItem -LiteralPath $deployDir -Force |
-        Where-Object { $_.Name -ne ".git" } |
+        Where-Object {
+            $_.Name -ne ".git" -and
+            ($preserveRootNames -notcontains $_.Name)
+        } |
         Remove-Item -Recurse -Force
 
     Get-ChildItem -LiteralPath $publicDir -Force | ForEach-Object {
@@ -60,15 +88,23 @@ try {
         throw "git diff --cached --quiet failed."
     }
 
-    # & git -C $deployDir commit -m $msg
-    # if ($LASTEXITCODE -ne 0) {
-    #     throw "git commit failed."
-    # }
+    & git -C $deployDir commit -m $msg
+    if ($LASTEXITCODE -ne 0) {
+        throw "git commit failed."
+    }
+    $commitCreated = $true
+    $commitHash = (& git -C $deployDir rev-parse --short HEAD).Trim()
 
-    # & git -C $deployDir push origin $deployBranch
-    # if ($LASTEXITCODE -ne 0) {
-    #     throw "git push failed."
-    # }
+    if ($NoPush) {
+        Write-Host "Commit created locally on '$DeployBranch': $commitHash"
+    }
+    else {
+        & git -C $deployDir push origin $DeployBranch
+        if ($LASTEXITCODE -ne 0) {
+            throw "git push failed."
+        }
+        Write-Host "Pushed '$DeployBranch' commit: $commitHash"
+    }
 }
 finally {
     if ($worktreeReady -and (Test-Path -LiteralPath $deployDir)) {

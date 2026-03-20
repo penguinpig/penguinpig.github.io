@@ -1,0 +1,10 @@
+{
+  "name": "penguinpig-blog",
+  "private": true,
+  "scripts": {
+    "notion:test": "node ./scripts/notion-fetch.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1"
+  }
+}

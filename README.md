@@ -111,7 +111,7 @@ hugo --minify
 到 `Settings -> Secrets and variables -> Actions -> Variables` 建立：
 
 - `NOTION_ID`
-- `NOTION_OUTPUT_PATH`，建議值：`synced/notion-sync-report.md`
+- `OUTPUT_PATH`，建議值：`synced/notion-sync-report.md`
 - `HUGO_CONTENT_ROOT`，建議值：`content`
 
 ### Workflow 行為

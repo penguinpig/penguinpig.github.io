@@ -141,7 +141,17 @@ jobs:
           
       - name: Build Hugo site
         run: hugo --minify # 建置
-        
+              - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+# ------
+# (以下區段不適用，workflow的commit不會觸發 GitHub Page建置)   
       - name: Deploy public site to master
         shell: bash
         run: |

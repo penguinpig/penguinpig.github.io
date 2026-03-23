@@ -41,10 +41,6 @@ git push --force
 git push --force-with-lease
 ```
 
-## shallow clone
-
--
-
 ### 設定不同GitHub帳號
 
 - 用於控制Push / Pull權限

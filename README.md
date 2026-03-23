@@ -10,9 +10,9 @@
 
 目前流程是：
 
-1. `dev` 分支存放原始碼與內容
-2. GitHub Actions 從 Notion 同步內容回 `dev`
-3. Hugo 建站後把靜態檔部署到 `master`
+1. `master` 分支存放 Hugo 原始碼與內容
+2. GitHub Actions 從 Notion 同步內容回 `master`
+3. Hugo 建站後透過 GitHub Pages 官方 Actions 直接部署
 
 現在只差最後一步驗證：
 
@@ -22,8 +22,9 @@
 
 ### 分支用途
 
-- `dev`：Hugo 原始碼、文章內容、workflow、同步腳本
-- `master`：Hugo build 後的靜態網站內容，用於 GitHub Pages
+- `master`：Hugo 原始碼、文章內容、workflow、同步腳本
+
+目前不再需要額外的靜態檔部署分支，GitHub Pages 會直接接收 workflow 上傳的 build artifact。
 
 ### 主要目錄
 
@@ -55,7 +56,7 @@ npm install
 ```dotenv
 NOTION_TOKEN=secret_xxxxx
 NOTION_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-OUTPUT_PATH=synced/notion-sync-report.md
+OUTPUT_PATH=synced/notion-page.md
 HUGO_CONTENT_ROOT=content
 ```
 
@@ -95,8 +96,8 @@ hugo --minify
 
 ### 必要條件
 
-1. Repository 預設分支要設為 `dev`
-2. `master` 分支要存在，作為靜態站部署分支
+1. Repository 預設分支要設為 `master`
+2. GitHub Pages 的 `Source` 要設為 `GitHub Actions`
 3. Notion integration 必須能讀取目標 page 或 database
 4. Notion page 或 database 必須分享給該 integration
 
@@ -111,21 +112,22 @@ hugo --minify
 到 `Settings -> Secrets and variables -> Actions -> Variables` 建立：
 
 - `NOTION_ID`
-- `OUTPUT_PATH`，建議值：`synced/notion-sync-report.md`
+- `OUTPUT_PATH`，建議值：`synced/notion-page.md`
 - `HUGO_CONTENT_ROOT`，建議值：`content`
 
 ### Workflow 行為
 
 目前的 `sync-notion.yml` 會做這些事：
 
-1. 從 `dev` checkout repo 與 theme submodule
+1. 從 `master` checkout repo 與 theme submodule
 2. 安裝 Node.js 20
-3. 安裝 Hugo
+3. 安裝 Hugo 與 GitHub Pages 設定
 4. 執行 `npm ci`
 5. 執行 Notion 同步腳本
-6. 若內容有變更，commit 並 push 回 `dev`
+6. 若內容有變更，commit 並 push 回 `master`
 7. 執行 `hugo --minify`
-8. 將 `public` 內容部署到 `master`
+8. 上傳 `public` 為 GitHub Pages artifact
+9. 由 GitHub Pages 官方部署流程發布網站
 
 ### 排程時間
 
@@ -145,8 +147,8 @@ workflow 目前設定為：
 第一次手動執行時，確認以下幾點：
 
 1. Workflow 成功結束，沒有紅字失敗步驟
-2. `dev` 分支有收到同步後的內容更新 commit
-3. `master` 分支有收到新的靜態網站 commit
+2. `master` 分支有收到同步後的內容更新 commit
+3. GitHub Pages 顯示新的 deploy 紀錄
 4. GitHub Pages 顯示的是最新內容
 5. 若 Notion 沒有內容變更，workflow 也能正常結束，只是略過 commit
 
@@ -165,16 +167,16 @@ workflow 目前設定為：
 
 ## 建議最後驗證步驟
 
-1. 確認 GitHub 預設分支是 `dev`
-2. 確認 Secrets / Variables 都已建立
-3. 到 GitHub 手動觸發一次 `Sync Notion Content`
-4. 檢查 `dev` 與 `master` 是否都有新的 commit
-5. 檢查 Pages 網站是否正常更新
+1. 確認 GitHub 預設分支是 `master`
+2. 確認 GitHub Pages Source 是 `GitHub Actions`
+3. 確認 Secrets / Variables 都已建立
+4. 到 GitHub 手動觸發一次 `Sync Notion Content`
+5. 檢查 `master` 是否有新的內容 commit
+6. 檢查 Pages 網站是否正常更新
 
 如果第一次 workflow 失敗，優先檢查：
 
 - `NOTION_TOKEN` 是否正確
 - `NOTION_ID` 是否正確
 - Notion database / page 是否有分享給 integration
-- `master` 分支是否已存在
-- GitHub Pages 是否指向 `master`
+- GitHub Pages 是否已設為 `GitHub Actions`

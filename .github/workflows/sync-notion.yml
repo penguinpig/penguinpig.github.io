@@ -7,6 +7,12 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   sync:
@@ -14,14 +20,14 @@ jobs:
     env:
       NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
       NOTION_ID: ${{ vars.NOTION_ID || vars.NOTION_PAGE_ID }}
-      OUTPUT_PATH: ${{ vars.OUTPUT_PATH || 'synced/notion-sync-report.md' }}
+      OUTPUT_PATH: ${{ vars.OUTPUT_PATH || 'synced/notion-page.md' }}
       HUGO_CONTENT_ROOT: ${{ vars.HUGO_CONTENT_ROOT || 'content' }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: dev
+          ref: master
           fetch-depth: 0
           submodules: recursive
 
@@ -37,63 +43,39 @@ jobs:
           hugo-version: "0.150.0"
           extended: true
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
       - name: Install dependencies
         run: npm ci
 
       - name: Sync Notion content
         run: node ./scripts/notion-fetch.mjs
 
-      - name: Commit synced source changes to dev
+      - name: Commit synced source changes to master
         id: commit_source
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout dev
+          git checkout master
           git add content
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git commit -m "chore: sync notion content"
-          git push origin dev
+          git push origin master
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
       - name: Build Hugo site
         run: hugo --minify
 
-      - name: Deploy public site to master
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git fetch origin master
-          rm -rf .deploy_worktree
-          git worktree add -B master .deploy_worktree origin/master
-          rsync -a --delete \
-            --exclude ".git/" \
-            --exclude ".github/" \
-            --exclude "README.md" \
-            --exclude "CNAME" \
-            --exclude ".nojekyll" \
-            public/ .deploy_worktree/
-          cp README.md .deploy_worktree/README.md
-          if [ -f public/CNAME ]; then
-            cp public/CNAME .deploy_worktree/CNAME
-          fi
-          touch .deploy_worktree/.nojekyll
-          git -C .deploy_worktree add -A
-          if git -C .deploy_worktree diff --cached --quiet; then
-            echo "No site changes to deploy"
-            exit 0
-          fi
-          git -C .deploy_worktree commit -m "build site_$(date -u +'%Y-%m-%d.%H%M')"
-          git -C .deploy_worktree push origin master
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
 
-      - name: Cleanup worktree
-        if: always()
-        shell: bash
-        run: |
-          if [ -d .deploy_worktree ]; then
-            git worktree remove .deploy_worktree --force || true
-          fi
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

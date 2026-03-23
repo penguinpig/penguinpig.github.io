@@ -18,7 +18,7 @@ notion_id: "328b8bba-f3ba-8045-b3ea-f5648532f3f5"
 
 ## ✅ 成功標準（怎樣算完成）
 
-- [ ] 使用Notion API抓取DataBase → Page 內容
+- [x] 使用Notion API抓取DataBase → Page 內容
 
 - [ ] GitHub Action設置
 
@@ -72,6 +72,8 @@ flowchart LR
   - 不會保留上一次狀態
 
 - GitHub action 設置
+  - Commits pushed by a GitHub Actions workflow that uses the GITHUB_TOKEN do not trigger a GitHub Pages build.
+    - [https://docs.github.com/actions/concepts/security/github_token](https://docs.github.com/actions/concepts/security/github_token)
 
 ```yaml
 name: ${工作流名稱}

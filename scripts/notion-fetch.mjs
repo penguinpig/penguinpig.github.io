@@ -14,6 +14,7 @@ const ARCHIVE_SECTION_MAP = {
 const PUBLISHED_STATUS = new Set(["published", "done", "complete", "completed", "已發佈", "已发布", "已完成"]);
 const DRAFT_STATUS = new Set(["draft", "in progress", "進行中", "整理中", "草稿"]);
 
+// 讀取必要環境變數；若不存在就直接中止，避免後續請求出現難追的錯誤。
 function getRequiredEnv(name) {
   const value = process.env[name];
   if (!value) {
@@ -22,14 +23,17 @@ function getRequiredEnv(name) {
   return value;
 }
 
+// 讀取一般環境變數，沒有設定時回傳預設值。
 function getEnv(name, fallback = "") {
   return process.env[name] || fallback;
 }
 
+// 移除 Notion id 中的 `-`，方便後續做格式統一。
 function normalizeId(value) {
   return value.replace(/-/g, "");
 }
 
+// 將 32 碼的 Notion id 補回標準破折號格式，供 API 使用。
 function insertIdDashes(value) {
   const raw = normalizeId(value);
   if (raw.length !== 32) {
@@ -45,6 +49,7 @@ function insertIdDashes(value) {
   ].join("-");
 }
 
+// 統一封裝對 Notion API 的呼叫，包含驗證標頭、版本與錯誤處理。
 async function notionRequest(endpoint, options = {}) {
   const token = getRequiredEnv("NOTION_TOKEN");
   const response = await fetch(`${NOTION_API_BASE}${endpoint}`, {
@@ -65,10 +70,12 @@ async function notionRequest(endpoint, options = {}) {
   return response.json();
 }
 
+// 將 Notion rich text 陣列轉成純文字。
 function richTextToPlain(richText = []) {
   return richText.map((item) => item.plain_text ?? "").join("");
 }
 
+// 將 Notion rich text 轉成 Markdown，保留連結與基本文字樣式。
 function richTextToMarkdown(richText = []) {
   return richText
     .map((item) => {
@@ -87,6 +94,7 @@ function richTextToMarkdown(richText = []) {
     .join("");
 }
 
+// 把單一 Notion block 轉成對應的 Markdown 片段。
 function blockToMarkdown(block, depth = 0) {
   const indent = "  ".repeat(depth);
 
@@ -127,12 +135,14 @@ function blockToMarkdown(block, depth = 0) {
   }
 }
 
+// 將 Notion table row 的每個儲存格轉成 Markdown 可用內容。
 function renderTableRowCells(row) {
   return (row.table_row?.cells ?? []).map((cell) =>
     richTextToMarkdown(cell).replace(/\|/g, "\\|").replace(/\n/g, " ").trim()
   );
 }
 
+// 將整個 Notion table 的 rows 組裝成 Markdown table。
 function tableRowsToMarkdown(rows, depth = 0) {
   if (!rows.length) return "";
 
@@ -159,6 +169,7 @@ function tableRowsToMarkdown(rows, depth = 0) {
   return `${lines.join("\n")}\n`;
 }
 
+// 將一段 Markdown 每行前面補上 `>`，用來巢狀呈現 callout 內容。
 function prefixQuotedMarkdown(markdown, depth = 0) {
   const indent = "  ".repeat(depth);
   return markdown
@@ -168,6 +179,7 @@ function prefixQuotedMarkdown(markdown, depth = 0) {
     .join("\n");
 }
 
+// 分頁抓取指定 block 的所有子區塊。
 async function fetchBlockChildren(blockId) {
   let hasMore = true;
   let nextCursor;
@@ -189,6 +201,7 @@ async function fetchBlockChildren(blockId) {
   return blocks;
 }
 
+// 遞迴渲染單一 block；若有 children 會一併展開。
 async function renderBlock(block, depth = 0) {
   if (block.type === "table") {
     const rows = await fetchBlockChildren(block.id);
@@ -214,6 +227,7 @@ async function renderBlock(block, depth = 0) {
   return markdown;
 }
 
+// 將一組 blocks 依序轉成完整 Markdown 內容。
 async function renderBlocks(blocks, depth = 0) {
   const chunks = [];
 
@@ -227,6 +241,7 @@ async function renderBlocks(blocks, depth = 0) {
   return `${chunks.join("\n\n")}\n`.replace(/\n{3,}/g, "\n\n");
 }
 
+// 從 Notion page properties 中找出 title 欄位並回傳標題。
 function extractPageTitle(properties = {}) {
   for (const property of Object.values(properties)) {
     if (property.type === "title") {
@@ -237,11 +252,13 @@ function extractPageTitle(properties = {}) {
   return "Untitled";
 }
 
+// 讀取單一 page，專門用來取得頁面標題。
 async function fetchPageTitle(pageId) {
   const page = await notionRequest(`/pages/${pageId}`);
   return extractPageTitle(page.properties ?? {});
 }
 
+// 將各種 Notion property 型別轉成單一純文字值。
 function propertyToPlainText(property) {
   switch (property?.type) {
     case "title":
@@ -285,6 +302,7 @@ function propertyToPlainText(property) {
   }
 }
 
+// 將適合陣列表示的 Notion property 轉成字串陣列。
 function propertyToArray(property) {
   switch (property?.type) {
     case "multi_select":
@@ -306,6 +324,7 @@ function propertyToArray(property) {
   }
 }
 
+// 分頁查詢整個 Notion database，拿到全部頁面資料。
 async function queryDatabase(databaseId) {
   let hasMore = true;
   let nextCursor;
@@ -326,6 +345,7 @@ async function queryDatabase(databaseId) {
   return pages;
 }
 
+// 統一解析 checkbox 或 boolean formula 的布林值。
 function getCheckboxValue(property) {
   if (!property) return false;
   if (property.type === "checkbox") return property.checkbox;
@@ -335,10 +355,12 @@ function getCheckboxValue(property) {
   return false;
 }
 
+// 依欄位名稱安全取得 page property。
 function getProperty(page, name) {
   return page.properties?.[name];
 }
 
+// 將標題或自訂 slug 清洗成適合 Hugo 檔名與網址的格式。
 function slugify(value) {
   return value
     .toLowerCase()
@@ -349,19 +371,23 @@ function slugify(value) {
     .replace(/^-|-$/g, "") || "untitled";
 }
 
+// 將字串轉成 YAML 安全字面值，避免引號或反斜線破壞 front matter。
 function yamlEscape(value) {
   return `"${String(value).replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`;
 }
 
+// 將字串陣列格式化成 YAML array。
 function yamlArray(values = []) {
   if (!values.length) return "[]";
   return `[${values.map((value) => yamlEscape(value)).join(", ")}]`;
 }
 
+// 產生可為 null 的 YAML 欄位值。
 function yamlNullable(value) {
   return value ? yamlEscape(value) : "null";
 }
 
+// 將 Notion 的分類字串正規化成支援的 archive type。
 function normalizeArchiveType(value) {
   const normalized = value.trim().toLowerCase();
   if (ARCHIVE_SECTION_MAP[normalized]) {
@@ -370,10 +396,12 @@ function normalizeArchiveType(value) {
   return "";
 }
 
+// 從頁面欄位讀出 HugoArchives，決定文章要放進哪個 section。
 function getArchiveType(page) {
   return normalizeArchiveType(propertyToPlainText(getProperty(page, "HugoArchives")));
 }
 
+// 決定頁面的最終 slug，優先使用自訂欄位，否則退回 title。
 function getPageSlug(page, title) {
   const slugProperty =
     propertyToPlainText(getProperty(page, "Slug")) ||
@@ -382,14 +410,17 @@ function getPageSlug(page, title) {
   return slugify(slugProperty || title);
 }
 
+// 去除空值與重複值，避免 front matter 產生重複標籤。
 function uniqueValues(values = []) {
   return [...new Set(values.filter(Boolean).map((value) => String(value).trim()).filter(Boolean))];
 }
 
+// 將狀態字串轉成小寫，方便後續比對 draft / published。
 function normalizeStatus(status) {
   return status.trim().toLowerCase();
 }
 
+// 根據 Status 欄位推導 Hugo 的 draft 布林值。
 function resolveDraft(status) {
   if (!status) return false;
   if (PUBLISHED_STATUS.has(status)) return false;
@@ -397,14 +428,13 @@ function resolveDraft(status) {
   return false;
 }
 
+// 依照 Notion page 資料組出 Hugo front matter。
 function buildFrontMatter(page, title, archiveType, slug) {
   const createdAt = page.created_time ?? "";
-  const updatedAt = page.last_edited_time ?? "";
-  const archiveSection = ARCHIVE_SECTION_MAP[archiveType];
   const author = uniqueValues(propertyToArray(getProperty(page, "Author")));
-  const description = propertyToPlainText(getProperty(page, "Description")).trim();
-  const summary = propertyToPlainText(getProperty(page, "Summary")).trim();
-  const tags = uniqueValues(propertyToArray(getProperty(page, "Tags")));
+  const description = propertyToPlainText(getProperty(page, "摘要")).trim();
+  const summary = propertyToPlainText(getProperty(page, "摘要")).trim();
+  const tags = uniqueValues(propertyToArray(getProperty(page, "Tag")));
   const categories = uniqueValues([
     ...propertyToArray(getProperty(page, "Categories")),
     archiveType,
@@ -415,6 +445,7 @@ function buildFrontMatter(page, title, archiveType, slug) {
     "---",
     `author: ${yamlArray(author.length ? author : ["PenguinPig"])}`,
     `title: ${yamlNullable(title)}`,
+    `date: ${yamlNullable(createdAt)}`,
     `description: ${yamlNullable(description)}`,
     `summary: ${yamlNullable(summary)}`,
     `tags: ${yamlArray(tags)}`,
@@ -423,13 +454,7 @@ function buildFrontMatter(page, title, archiveType, slug) {
     "ShowToc: true",
     "TocOpen: true",
     `draft: ${resolveDraft(status) ? "true" : "false"}`,
-    `slug: ${yamlEscape(slug)}`,
-    `archives: ${yamlEscape(archiveType)}`,
-    `section: ${yamlEscape(archiveSection)}`,
     `notion_id: ${yamlEscape(page.id)}`,
-    `date: ${yamlNullable(createdAt)}`,
-    `lastmod: ${yamlNullable(updatedAt)}`,
-    `status: ${yamlNullable(status)}`,
     "---",
     "",
   ];
@@ -437,6 +462,7 @@ function buildFrontMatter(page, title, archiveType, slug) {
   return lines.join("\n");
 }
 
+// 將單篇 Notion 頁面轉成 Hugo markdown 並寫入對應目錄。
 async function writeHugoPage(page, contentRoot) {
   const title = extractPageTitle(page.properties ?? {});
   const archiveType = getArchiveType(page);
@@ -463,6 +489,7 @@ async function writeHugoPage(page, contentRoot) {
   return { status: "written", title, filePath };
 }
 
+// 同步整個 Notion database 到 Hugo content，回傳寫入與略過摘要。
 async function syncDatabaseToHugo(database) {
   const contentRoot = getEnv("HUGO_CONTENT_ROOT", "content");
   const pages = await queryDatabase(database.id);
@@ -476,35 +503,15 @@ async function syncDatabaseToHugo(database) {
   const skipped = results.filter((item) => item.status === "skipped");
   const databaseTitle = richTextToPlain(database.title) || "Untitled Database";
 
-  const lines = [
-    `# ${databaseTitle} Sync Report`,
-    "",
-    `<!-- Generated from Notion database ${database.id} -->`,
-    "",
-    `Written: ${written.length}`,
-    `Skipped: ${skipped.length}`,
-    "",
-  ];
-
-  if (written.length) {
-    lines.push("## Written", "");
-    for (const item of written) {
-      lines.push(`- ${item.title} -> ${item.filePath}`);
-    }
-    lines.push("");
-  }
-
-  if (skipped.length) {
-    lines.push("## Skipped", "");
-    for (const item of skipped) {
-      lines.push(`- ${item.title}: ${item.reason}`);
-    }
-    lines.push("");
-  }
-
-  return `${lines.join("\n").trimEnd()}\n`;
+  return {
+    databaseId: database.id,
+    databaseTitle,
+    written,
+    skipped,
+  };
 }
 
+// 判斷傳入的 Notion id 是 page 還是 database。
 async function detectNotionObject(id) {
   try {
     const page = await notionRequest(`/pages/${id}`);
@@ -519,6 +526,7 @@ async function detectNotionObject(id) {
   return { type: "database", data: database };
 }
 
+// 針對單一 Notion page 產生 Markdown 檔內容。
 async function buildPageMarkdown(pageId) {
   const title = await fetchPageTitle(pageId);
   const blocks = await fetchBlockChildren(pageId);
@@ -526,6 +534,7 @@ async function buildPageMarkdown(pageId) {
   return `# ${title}\n\n<!-- Generated from Notion page ${pageId} -->\n\n${content}`.trimEnd() + "\n";
 }
 
+// 程式進入點：依 id 類型決定要同步單頁 Markdown 或整個資料庫。
 async function main() {
   const rawId = getEnv("NOTION_ID") || getEnv("NOTION_PAGE_ID");
   if (!rawId) {
@@ -533,22 +542,26 @@ async function main() {
   }
 
   const notionId = insertIdDashes(rawId);
-  const outputPath = process.env.OUTPUT_PATH || "synced/notion-sync-report.md";
   const notionObject = await detectNotionObject(notionId);
-  let markdown = "";
 
   if (notionObject.type === "page") {
-    markdown = await buildPageMarkdown(notionId);
-  } else {
-    markdown = await syncDatabaseToHugo(notionObject.data);
+    const outputPath = process.env.OUTPUT_PATH || "synced/notion-sync-report.md";
+    const markdown = await buildPageMarkdown(notionId);
+
+    await mkdir(path.dirname(outputPath), { recursive: true });
+    await writeFile(outputPath, markdown, "utf8");
+
+    console.log(`Notion page synced to ${outputPath}`);
+    return;
   }
 
-  await mkdir(path.dirname(outputPath), { recursive: true });
-  await writeFile(outputPath, markdown, "utf8");
-
-  console.log(`Notion ${notionObject.type} synced to ${outputPath}`);
+  const summary = await syncDatabaseToHugo(notionObject.data);
+  console.log(`Notion database synced: ${summary.databaseTitle}`);
+  console.log(`Written: ${summary.written.length}`);
+  console.log(`Skipped: ${summary.skipped.length}`);
 }
 
+// 集中處理未捕捉錯誤，讓 CLI 以非 0 狀態結束。
 main().catch((error) => {
   console.error(error.message);
   process.exit(1);

@@ -14,7 +14,7 @@ archives: "note"
 section: "notes"
 notion_id: "328b8bba-f3ba-8045-b3ea-f5648532f3f5"
 date: "2026-03-19T02:29:00.000Z"
-lastmod: "2026-03-20T09:17:00.000Z"
+lastmod: "2026-03-23T00:38:00.000Z"
 status: "進行中"
 ---
 ## 🎯 目標（你要達成什麼）
@@ -37,6 +37,11 @@ flowchart LR
 ## 📌 核心內容
 
 ### 主要想法／問題
+
+- GitHub action Debug，使用 Linux act package 模擬
+  - Docker-in-Docker
+
+  -
 
 -
 

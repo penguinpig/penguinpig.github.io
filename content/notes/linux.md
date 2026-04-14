@@ -1,85 +1,130 @@
 ---
 author: ["PenguinPig"]
-title: "Linux Note"
-date: "2024-02-01"
-description: "Linux Note."
-summary: "Linux Note."
-tags: ["notes", "shell", "code"]
-categories: ["linux", "syntax"]
-series: ["Linux Note"]
+title: "Linux筆記"
+date: "2024-12-24T06:49:00.000Z"
+description: "整理Linux常用指令"
+summary: "整理Linux常用指令"
+tags: ["Linux"]
+categories: ["note"]
+series: []
 ShowToc: true
 TocOpen: true
+draft: true
+notion_id: "166b8bba-f3ba-8023-a921-c82bd3f2a048"
 ---
+### 內容/片段
 
-# Linux Command 筆記
- 
-## Linux basic
+- 列出安裝套件
 
-1. keyboard shortcut
+```shell
+# apline
+apk list --installed
+apk info -R $(apk info) # List pacakge and it dependency recurse
 
-```ini
-Ctrl + Alt + T  #Open Terminal
-Ctrl + Alt + D  #Back to Desktop
+# debain
+dpkg -l
+# List pacakge and it dependency recurse
+for pkg in $(dpkg-query -W -f='${binary:Package}\n'); do
+  echo "===== $pkg ====="
+  apt-cache depends $pkg
+  echo
+done
 ```
 
-2. Terminal command
+- 無密碼登入Linux
+  - 產生本地公私鑰，複製公鑰到遠端伺服器
 
-```sh
-df -h                #Check disk usuage(easy to read)
-cat /etc/os-release  #Check kernal, os version
-lsb_release -a       #Check distribution version
-touch filename       #If not exists,Create file
-vim filename         #Edit file
-dpkg -i filename.deb #Install package
-sudo -i              #Run as root
-tail -n +2           #print 2nd line to the end
-rsync -avh {sourcePath} {destination}  #Sync sourcePath file to destPath
-echo -n "Stack exchange" | jq -sRr @uri # UrlEncode
-netstat -al          #Check port used
-ufw allow 5001       #Change firewall rule
-watch -n 0.5 {script}         #Watch terminal,Repeat script in 0.5s
-compgen -c           #List all available command you can run
-ss                   #netstat
-ps -aux {name}       #Print all process
-readlink -f /proc/{pid}/exe #Get process execing path
+```shell
+# --本地端--
+# 產生公私鑰
+ssh-keygen -t ed25519 
+# 複製公鑰到遠端伺服器
+ssh-copy-id user@remote_host 
+scp $env:USERPROFILE\.ssh\id_ed25519.pub user@remote_host:/tmp/mykey.pub
+# --遠端--
+mkdir -p ~/.ssh
+cat /tmp/mykey.pub >> ~/.ssh/authorized_keys
+rm /tmp/mykey.pub
+# --疑難排解--
+# ---檔案權限問題---
+# 1. 可能是home的權限
+# 2.  
+chmod 700 ~/.ssh # Owner: read + write + execute、Others: NO access
+chmod 600 ~/.ssh/authorized_keys # Owner: read + write、Others: NO access
+chmod 755 ~ # Owner: full access、Others: read + execute
+chown -R user:user ~/.ssh # Make sure .ssh and all its files belong to the correct user
 ```
 
----
-## Others
+- 常用指令
 
-### ssh settings
+```shell
+uname -a # 取得 Cpu架構
+cat /etc/os-release # 取得分散式版本
+```
 
-1. basic
-   1. ssh.config，client side setting when you connect to other server used
-   2. sshd.config，server side setting when other user connect to the host used
-`
-### firewall settings
+- .Net Runtime general needed library in apline
 
-1. nc(netcat)
+```shell
+libc
 
-2. ufw(Uncomlicated Firewall)
-   - basic command
-    ```sh
-        sudo ufw {enable/disable} #{啟用/關閉} 防火牆
-        sudo ufw status numbered #查看目前設定的規則
-        sudo ufw default allow #預設允許所有通訊埠
-        sudo ufw default deny #預設允許封鎖通訊埠
-        sudo ufw {allow/deny} number_port #{允許/封鎖}特定通訊埠
-        sudo ufw {allow/deny} port_num:port_num/{tcp/udp} ##{允許/封鎖}特定通訊埠一個區間
-        sudo ufw {allow/deny} from {ipAddress} #{允許/封鎖} {ipAddress} 的所有連線
-        sudo ufw {allow/deny} from {ipAddress}/{ipAddress_lastpart} #{允許/封鎖} 一個區間的IP 的所有連線
-    ```
-3. iptables
-   - basic command
-    ```sh
-        firewall-cmd --zone=public --add-port=8080/tcp #Add Incoming port rule
-        firewall-cmd --reload                          #Update change of firewall rule
-        firewall-cmd --zone=public --list-ports        #list zone port rlue
-    ```
+Core C runtime library.
+Provided by musl on Alpine.
+For better compatibility with .NET features that expect glibc, consider using gcompat.
+libstdc++
 
-### login without message
+Standard C++ library for certain components or libraries that may rely on C++.
+libgcc
 
-- 登入不顯示訊息
-    ```sh
-    touch ~/.hushlogin
-    ```
+GCC runtime library for proper exception handling and low-level system support.
+libssl
+
+OpenSSL library for secure communications (e.g., HTTPS, TLS).
+Install with:
+bash
+複製程式碼
+apk add libssl3
+zlib
+
+Compression library used internally by the .NET runtime.
+icu-libs
+
+International Components for Unicode (ICU).
+Required if DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false for advanced globalization and localization.
+krb5
+
+Kerberos library for authentication (used by Microsoft.Data.SqlClient when connecting to SQL Server with integrated authentication).
+Install with:
+bash
+複製程式碼
+apk add krb5
+tzdata
+
+Timezone data for handling time and date operations correctly in the .NET runtime.
+Install with:
+bash
+複製程式碼
+apk add tzdata
+gcompat (Optional)
+
+Compatibility layer to provide partial glibc support on musl-based systems.
+Install with:
+bash
+複製程式碼
+apk add gcompat
+ca-certificates
+
+Certificate authority bundle required for SSL/TLS connections.
+Install with:
+bash
+複製程式碼
+apk add ca-certificates
+```
+
+- apline 會造成 datetiem.tostring的結果和ubuntu不一致
+  - 應該是需額外設定 locals
+
+  - [DateTime format issue with Alpine 3.19 · Issue #5234 · dotnet/dotnet-dockerateTime format issue with Alpine 3.19 · Issue #5234 · dotnet/dotnet-docker](https://github.com/dotnet/dotnet-docker/issues/5234)
+
+```powershell
+* 確認少裝 icu-data-full 會影響DateTimeformt的問題，但沒有出
+```

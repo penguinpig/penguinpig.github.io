@@ -151,7 +151,7 @@ notion_id: "37cb8bba-f3ba-801b-a969-c9683ce95005"
     - information that is given to someone just before they do something, or a meeting where this happens
 
   - pursuing (v. 追捕)
-    - information that is given to someone just before they do something, or a meeting where this happensto follow someone or something, usually to try to catch him, her, or i
+    - information that is given to someone just before they do something, or a meeting where this happensto follow someone or something,
 
   - inspiration( n. 啟發、靈感)
     - someone or something that gives you ideas for doing something

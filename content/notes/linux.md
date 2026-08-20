@@ -14,6 +14,20 @@ notion_id: "166b8bba-f3ba-8023-a921-c82bd3f2a048"
 ---
 ### 內容/片段
 
+- OS版本會影響能安裝的Package版本
+  - OS version 通常決定你使用哪個 Alpine repository branch，而 repository 裡有哪些 package version，才真正決定 `apk` 能安裝什麼版本。
+
+```c#
+# 檢查目前OS版本可安裝的Package版本 <alpine>
+apk policy <packageName>
+# --- Output ---
+docker > apk policy libssl3
+libssl3 policy:
+  3.5.7-r0:
+    lib/apk/db/installed
+    https://dl-cdn.alpinelinux.org/alpine/v3.24/main
+```
+
 - 列出安裝套件
 
 ```shell

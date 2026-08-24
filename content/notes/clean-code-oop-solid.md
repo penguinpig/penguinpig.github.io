@@ -16,6 +16,9 @@ notion_id: "3c0b8bba-f3ba-803a-b065-df65f351259c"
 
 ### 內容／片段
 
+- 命名方式
+  - PascalCase (大駝峰)，每個單字開頭大寫
+
 - Clean Code
 
 ```javascript

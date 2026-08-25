@@ -14,6 +14,15 @@ notion_id: "166b8bba-f3ba-8023-a921-c82bd3f2a048"
 ---
 ### 內容/片段
 
+- OS分散式版本
+  - Debain
+
+  - Ubuntu
+
+  - Alpine
+
+  - Photon (VMware)，之後建置環境或許可以考慮<Trivy掃描沒弱點>
+
 - 比較兩個檔案
 
 ```shell

@@ -16,24 +16,19 @@ notion_id: "3c6b8bba-f3ba-801d-801c-d8a1c0314d9a"
 
 ### 內容／片段
 
-- 型別
+- 多重賦值(先算完右邊)
 
-### 來源
+```shell
 
-- 連結：
+```
 
-- 截圖／檔案：
-
-### 關鍵字（你之後會怎麼找回來？）
-
-- GO
-  - 型別斷言 (type assertion)
+- 型別斷言 (type assertion)
 
 ```go
 x.(int)
 ```
 
-  - Max Heap (Priority queue)
+- Max Heap (Priority queue)
 
 ```go
 import (
@@ -211,6 +206,14 @@ func pickGifts(gifts []int, k int) int64 {
 	return result
 }
 ```
+
+### 來源
+
+- 連結：
+
+- 截圖／檔案：
+
+### 關鍵字（你之後會怎麼找回來？）
 
 ---
 
